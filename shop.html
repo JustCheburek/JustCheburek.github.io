@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta name="description"
+          charset="UTF-8"
+          content="Магазин MineBridge, лучшего нелицензионного майнкрафт сервера на новых версиях">
+    <meta name="author" content="by JustCheburek">
+    <meta name="copyright" content="MineBridge 2022-2023">
+
+    <title>MineBridge | Shop</title>
+
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="shop_style.css">
+
+    <!-- Python -->
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css">
+
+    <!-- Соц сети -->
+    <meta property="og:title" content="MineBridge">
+    <meta property="og:image" content="logo_120x120.png">
+    <meta property="og:locale" content="ru_RU">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="logo_180x180.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="logo_32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="logo_16x16.png">
+    <link rel="icon" type="image/png" sizes="120x120" href="logo_120x120.png">
+    <link rel="manifest" href="minebridge.webmanifest">
+    <link rel="mask-icon" href="logo.svg" color="#33ADB4">
+    <meta name="apple-mobile-web-app-title" content="MineBridge">
+    <meta name="application-name" content="MineBridge">
+    <meta name="msapplication-TileColor" content="#33ADB4">
+    <meta name="theme-color" content="#33ADB4">
+
+    <!-- Яндекс -->
+    <meta name="yandex-verification" content="3af9855417af782a">
+
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            for (let j = 0; j < document.scripts.length; j++) {
+                if (document.scripts[j].src === r) {
+                    return;
+                }
+            }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(91732193, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true
+        });
+    </script>
+    <noscript>
+    <div><img src="https://mc.yandex.ru/watch/91732193" style="position:absolute; left:-9999px;" alt=""/></div>
+    </noscript>
+</head>
+
+<body>
+
+<header>
+    <div id="header">
+        <!-- Лого -->
+        <a href="./" id="logo">
+            <img src="media/logo.png" alt="Логотип сервера" id="logo_ico">
+        </a>
+
+        <!-- Бургер иконка -->
+        <div class="burger_icon">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="60"
+                 height="60" x="0" y="0" viewBox="0 0 64 64" xml:space="preserve" class=""><g transform="matrix(1.3000000000000005,0,0,1.3000000000000005,-9.600000000000016,-9.600000000000016)"><path d="M53 21H11c-1.7 0-3-1.3-3-3s1.3-3 3-3h42c1.7 0 3 1.3 3 3s-1.3 3-3 3zM53 35H11c-1.7 0-3-1.3-3-3s1.3-3 3-3h42c1.7 0 3 1.3 3 3s-1.3 3-3 3zM53 49H11c-1.7 0-3-1.3-3-3s1.3-3 3-3h42c1.7 0 3 1.3 3 3s-1.3 3-3 3z" fill="#00adb5" data-original="#000000" class=""></path></g></svg>
+        </div>
+
+        <!-- Навигация -->
+        <nav>
+            <div id="nav_text">
+                <!-- Основная навигация -->
+                <a href="./" class="nav_text">Главная</a>
+                <a href="./" id="indicator" class="nav_text">Магазин</a>
+                <details class="nav_text no-anim">
+                    <summary class="subsection">
+                        <a href="./rules">
+                            Правила
+                        </a>
+                    </summary>
+                    <div id="nav_opening_text">
+                        <a href="./mods" class="subsection">Модификации</a>
+                        <a href="./blacklist" class="subsection">Запрещёнка</a>
+                    </div>
+                </details>
+                <a href="./news" class="nav_text">Новости</a>
+                <a href="./features" class="nav_text">Фичи</a>
+            </div>
+
+            <!-- Навигация по ссылкам -->
+            <div class="urls">
+                <a target="_blank" href="https://t.me/MineBridgeOfficial" class="tg url" title="Телеграм">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                        <path fill="white"
+                              d="M5.83,23.616c12.568-5.529,28.832-12.27,31.077-13.203c5.889-2.442,7.696-1.974,6.795,3.434 c-0.647,3.887-2.514,16.756-4.002,24.766c-0.883,4.75-2.864,5.313-5.979,3.258c-1.498-0.989-9.059-5.989-10.7-7.163 c-1.498-1.07-3.564-2.357-0.973-4.892c0.922-0.903,6.966-6.674,11.675-11.166c0.617-0.59-0.158-1.559-0.87-1.086 c-6.347,4.209-15.147,10.051-16.267,10.812c-1.692,1.149-3.317,1.676-6.234,0.838c-2.204-0.633-4.357-1.388-5.195-1.676 C1.93,26.43,2.696,24.995,5.83,23.616z"/>
+                    </svg>
+                </a>
+                <a target="_blank" href="https://discord.gg/rmWAuKGb69" class="ds url" title="Дискорд">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                        <path fill="white" transform="scale(3.55556, 3.55556)"
+                              d="M54.657,19.077c0,0 8.343,9.663 8.343,27.069v3.65c0,0 -10.536,6.866 -13.747,6.866l-3.115,-4.529c1.936,-0.867 4.577,-2.372 4.577,-2.372l-0.965,-0.747c0,0 -6.173,2.86 -13.749,2.86c-7.576,0 -13.749,-2.86 -13.749,-2.86l-0.965,0.747c0,0 2.641,1.505 4.577,2.372l-3.115,4.529c-3.213,0 -13.749,-6.866 -13.749,-6.866v-3.65c0,-17.406 8.343,-27.069 8.343,-27.069c0,0 5.707,-2.762 10.977,-3.489l1.635,3.1c0,0 2.599,-0.602 6.045,-0.602c3.446,0 6.045,0.602 6.045,0.602l1.635,-3.1c5.27,0.727 10.977,3.489 10.977,3.489zM27.01,43.603c2.656,0 4.808,-2.418 4.808,-5.401c0,-2.983 -2.153,-5.401 -4.808,-5.401c-2.655,0 -4.808,2.418 -4.808,5.401c0,2.983 2.152,5.401 4.808,5.401zM44.99,43.603c2.656,0 4.808,-2.418 4.808,-5.401c0,-2.983 -2.153,-5.401 -4.808,-5.401c-2.656,0 -4.808,2.418 -4.808,5.401c0,2.983 2.152,5.401 4.808,5.401z"></path>
+                    </svg>
+                </a>
+                <a target="_blank" href="https://vk.com/minebridge" class="vk url" title="ВКонтакте">
+                    <svg xmlns="http://www.w3.org/2000/svg">
+                        <path fill="white"
+                              d="m21.4639,28.8396c-9.0192,0 -14.4928,-6.2576 -14.7056,-16.656l4.568,0c0.1424,7.6384 3.6176,10.88 6.2816,11.5408l0,-11.5408l4.3792,0l0,6.5904c2.5696,-0.2848 5.2576,-3.2832 6.1632,-6.5904l4.3056,0c-0.6896,4.0688 -3.616,7.0672 -5.6864,8.304c2.0704,1 5.4016,3.6176 6.6864,8.352l-4.7344,0c-1,-3.1648 -3.4512,-5.616 -6.7344,-5.9488l0,5.9488l-0.5232,0z"/>
+                    </svg>
+                </a>
+                <a target="_blank" href="https://boosty.to/minebridge" class="boosty url" title="Бусти">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 235.6 292.2">
+                        <path fill="white"
+                              d="M44.3,164.5L76.9,51.6H127l-10.1,35c-0.1,0.2-0.2,0.4-0.3,0.6L90,179.6h24.8c-10.4,25.9-18.5,46.2-24.3,60.9
+		c-45.8-0.5-58.6-33.3-47.4-72.1 M90.7,240.6l60.4-86.9h-25.6l22.3-55.7c38.2,4,56.2,34.1,45.6,70.5
+		c-11.3,39.1-57.1,72.1-101.7,72.1C91.3,240.6,91,240.6,90.7,240.6z"/>
+                    </svg>
+                </a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div id="max_size">
+        <iframe src="https://yoomoney.ru/quickpay/fundraise/button?billNumber=0EN6awSYV7k.230131&" width="330"
+                height="50" frameborder="0" allowtransparency="true" scrolling="no"></iframe>
+        <iframe src="https://yoomoney.ru/quickpay/fundraise/button?billNumber=SiEpgATi6eI.230131&" width="330"
+                height="50" frameborder="0" allowtransparency="true" scrolling="no"></iframe>
+        <iframe src="https://yoomoney.ru/quickpay/fundraise/button?billNumber=FrKZYwTjf54.230131&" width="330"
+                height="50" frameborder="0" allowtransparency="true" scrolling="no"></iframe>
+    </div>
+</main>
+
+<footer>
+    <!-- Навигация по ссылкам -->
+    <div class="urls">
+        <a target="_blank" href="https://t.me/MineBridgeOfficial" class="tg url" title="Телеграм">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                <path fill="white"
+                      d="M5.83,23.616c12.568-5.529,28.832-12.27,31.077-13.203c5.889-2.442,7.696-1.974,6.795,3.434 c-0.647,3.887-2.514,16.756-4.002,24.766c-0.883,4.75-2.864,5.313-5.979,3.258c-1.498-0.989-9.059-5.989-10.7-7.163 c-1.498-1.07-3.564-2.357-0.973-4.892c0.922-0.903,6.966-6.674,11.675-11.166c0.617-0.59-0.158-1.559-0.87-1.086 c-6.347,4.209-15.147,10.051-16.267,10.812c-1.692,1.149-3.317,1.676-6.234,0.838c-2.204-0.633-4.357-1.388-5.195-1.676 C1.93,26.43,2.696,24.995,5.83,23.616z"/>
+            </svg>
+        </a>
+        <a target="_blank" href="https://discord.gg/rmWAuKGb69" class="ds url" title="Дискорд">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                <path fill="white" transform="scale(3.55556, 3.55556)"
+                      d="M54.657,19.077c0,0 8.343,9.663 8.343,27.069v3.65c0,0 -10.536,6.866 -13.747,6.866l-3.115,-4.529c1.936,-0.867 4.577,-2.372 4.577,-2.372l-0.965,-0.747c0,0 -6.173,2.86 -13.749,2.86c-7.576,0 -13.749,-2.86 -13.749,-2.86l-0.965,0.747c0,0 2.641,1.505 4.577,2.372l-3.115,4.529c-3.213,0 -13.749,-6.866 -13.749,-6.866v-3.65c0,-17.406 8.343,-27.069 8.343,-27.069c0,0 5.707,-2.762 10.977,-3.489l1.635,3.1c0,0 2.599,-0.602 6.045,-0.602c3.446,0 6.045,0.602 6.045,0.602l1.635,-3.1c5.27,0.727 10.977,3.489 10.977,3.489zM27.01,43.603c2.656,0 4.808,-2.418 4.808,-5.401c0,-2.983 -2.153,-5.401 -4.808,-5.401c-2.655,0 -4.808,2.418 -4.808,5.401c0,2.983 2.152,5.401 4.808,5.401zM44.99,43.603c2.656,0 4.808,-2.418 4.808,-5.401c0,-2.983 -2.153,-5.401 -4.808,-5.401c-2.656,0 -4.808,2.418 -4.808,5.401c0,2.983 2.152,5.401 4.808,5.401z"></path>
+            </svg>
+        </a>
+        <a target="_blank" href="https://vk.com/minebridge" class="vk url" title="ВКонтакте">
+            <svg xmlns="http://www.w3.org/2000/svg">
+                <path fill="white"
+                      d="m21.4639,28.8396c-9.0192,0 -14.4928,-6.2576 -14.7056,-16.656l4.568,0c0.1424,7.6384 3.6176,10.88 6.2816,11.5408l0,-11.5408l4.3792,0l0,6.5904c2.5696,-0.2848 5.2576,-3.2832 6.1632,-6.5904l4.3056,0c-0.6896,4.0688 -3.616,7.0672 -5.6864,8.304c2.0704,1 5.4016,3.6176 6.6864,8.352l-4.7344,0c-1,-3.1648 -3.4512,-5.616 -6.7344,-5.9488l0,5.9488l-0.5232,0z"/>
+            </svg>
+        </a>
+        <a target="_blank" href="https://boosty.to/minebridge" class="boosty url" title="Бусти">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 235.6 292.2">
+                <path fill="white"
+                      d="M44.3,164.5L76.9,51.6H127l-10.1,35c-0.1,0.2-0.2,0.4-0.3,0.6L90,179.6h24.8c-10.4,25.9-18.5,46.2-24.3,60.9
+		c-45.8-0.5-58.6-33.3-47.4-72.1 M90.7,240.6l60.4-86.9h-25.6l22.3-55.7c38.2,4,56.2,34.1,45.6,70.5
+		c-11.3,39.1-57.1,72.1-101.7,72.1C91.3,240.6,91,240.6,90.7,240.6z"/>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Копирайт -->
+    <span>&#169; MineBridge 2022-2023</span>
+</footer>
+
+<!-- Иконки -->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<!-- Бургер меню -->
+<script src="burger_menu.js"></script>
+
+</body>
+
+</html>

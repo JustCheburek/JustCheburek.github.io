@@ -1,0 +1,28 @@
+:root {
+    --height: 47px;
+    --max-height: 571px;
+}
+
+/* Адаптивность */
+@media (max-width: 1000px) {
+    /* Переменные */
+    :root {
+        --height: 67px;
+        --max-height: 1388px;
+    }
+}
+
+/*
+details[open]:not(.no-anim) {
+    animation: spoiler 1200ms ease-out;
+}
+
+@keyframes spoiler {
+    0% {
+        max-height: var(--height);
+    }
+    100% {
+        max-height: var(--max-height);
+    }
+}
+*/

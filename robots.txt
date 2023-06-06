@@ -1,0 +1,11 @@
+User-agent: Googlebot
+User-agent: YandexBot
+User-agent: *
+
+Allow: /
+
+Crawl-delay: 1
+
+Host: minebridge.ml
+Sitemap: https://minebridge.ml/sitemap.xml
+Sitemap: https://minebridge.ml/sitemap.txt

@@ -1,0 +1,284 @@
+/* Весь сайт */
+body {
+    font-size: 18px;
+    line-height: 33px;
+}
+
+summary, button {
+    cursor: pointer;
+}
+
+/* Главная часть */
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+/* максимальная ширина сайта */
+#max_size {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+}
+
+/* Ссылки */
+main a:not(.rule_number):not(.rule_number_box):not(.not-underline):not(.unic_color) {
+    border-bottom: 2px solid rgb(var(--unic-color));
+}
+
+/* верхний текст */
+h1 {
+    line-height: 45px;
+}
+
+#info_mostiki {
+    margin: 45px 0 25px 0;
+}
+
+/* нижний текст */
+#max_size > p {
+    margin: 9px 0;
+}
+
+/* Правила */
+/* Контейнер */
+.rules_container {
+    margin: 13px 0; /* Расстояние между текстом правил */
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Заголовок правил */
+.heading_rules {
+    /* отображение */
+    display: flex;
+    align-items: center;
+}
+
+.heading_rules_text {
+    background: var(--background-color);
+    outline: none;
+    border: 0;
+}
+
+.heading_rules_text:not(.unic_color) {
+    color: var(--white-color);
+}
+
+.heading_rules, #event summary {
+    font-size: 19px;
+    width: max-content;
+    margin-bottom: 17px; /* Расстояние между главным текстом и открывающимся текстом */
+}
+
+/* Коробка */
+.rules_box {
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    transition: grid-template-rows 1s;
+}
+
+.rules_box.open {
+    grid-template-rows: 1fr;
+}
+
+/* Правила */
+.rules {
+    padding-left: 5px;
+    line-height: 25px;
+    min-height: 0;
+    transition: visibility 1s;
+    visibility: hidden;
+}
+
+.rules_box.open .rules {
+    visibility: visible;
+}
+
+.rule {
+    display: flex;
+    margin: 7px 0;
+}
+
+/* Цифры */
+.rule_number {
+    /* Отображение */
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    /* Размеры */
+    width: 25px;
+    height: 25px;
+    margin-right: 17px;
+
+    cursor: pointer; /* Изменение мышки на курсор */
+}
+
+.rule:hover .rule_number {
+    /* Замена цифры на ссылку */
+    color: transparent;
+    transform: scale(80%);
+    background-image: url("media/link.svg");
+    background-size: cover;
+}
+
+/* Цифра */
+.main_rule_number {
+    transform: translateX(-9px);
+    width: 3px;
+    transition: 1000ms transform;
+}
+
+.heading_rules:hover .main_rule_number {
+    transform: translateX(15px) rotate(180deg);
+}
+
+.rule_number_box {
+    /* Размеры */
+    width: 30px;
+    height: 30px;
+
+    /* Задний фон */
+    border-radius: 10px;
+    background: rgba(63, 63, 70, .5);
+
+    /* Очистка дефолт конфигов кнопки */
+    border: none;
+    color: rgb(var(--white-color));
+
+    margin-right: 15px; /* Расстояние от текста до цифры */
+    overflow: hidden; /* Спрятать объекты за границами */
+}
+
+/* Ссылка */
+.rule_link {
+    transform: translateX(-35px);
+    transition: 450ms transform;
+}
+
+.heading_rules:hover .rule_link {
+    transform: translateX(2px) rotate(145deg);
+}
+
+.rule_link:active {
+    color: rgb(var(--unic-color));
+}
+
+/* Ивенты */
+#event {
+    overflow: hidden;
+    margin: 12px 0;
+}
+
+#event summary {
+    font-size: 22px;
+    margin-bottom: 7px;
+}
+
+/* Модификации */
+.modifications_box {
+    width: 550px;
+}
+
+.list_text {
+    position: sticky;
+    top: 105px;
+    backdrop-filter: blur(2px);
+    background: rgba(var(--background-color), 0.8);
+    margin-top: 25px;
+    padding: 25px 0;
+}
+
+.list li::marker {
+    color: rgba(var(--white-color), 0.25)
+}
+
+.list {
+    font-size: 24px;
+    line-height: 36px;
+}
+
+#mods_list, #rp_list {
+    font-weight: 500;
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+    /* Шрифты */
+    h1 {
+        font-size: 60px;
+        line-height: 80px;
+    }
+
+    h2 {
+        font-size: 50px;
+        line-height: 55px;
+    }
+
+    p, #event, .list li, .rule_text {
+        font-size: 40px;
+        line-height: 55px;
+    }
+
+    /* Отступы списков */
+    ol, ul {
+        padding-left: 50px;
+    }
+
+    /* Правила */
+    .rules_container {
+        margin: 25px 0;
+    }
+
+    .heading_rules_text {
+        font-size: 45px;
+        line-height: 60px;
+    }
+
+    /* Цифра */
+    .rule_number_box {
+        /* Размеры */
+        width: 60px;
+        height: 60px;
+
+        margin-right: 30px;
+    }
+
+    .main_rule_number {
+        transform: translateX(-23px);
+        font-size: 35px;
+    }
+
+    .rule_number {
+        transform: translateY(13px);
+        margin-right: 40px;
+        width: 45px;
+        font-size: 30px;
+        font-weight: 500;
+    }
+
+    .rule_link {
+        width: 80%;
+        height: 80%;
+
+        transform: translateX(-50px) scale(50%);
+        transition: 450ms transform;
+    }
+
+    .rule:hover .rule_number {
+        transform: scale(120%);
+    }
+
+    /* Ивенты */
+    #event summary {
+        font-size: 35px;
+    }
+
+    /* Модификации */
+    .modifications_box {
+        width: 1150px;
+    }
+}

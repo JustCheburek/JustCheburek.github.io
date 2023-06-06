@@ -1,0 +1,547 @@
+/*
+Главная часть
+*/
+main {
+    text-align: center;
+    font-size: large;
+}
+
+.textbutton {
+    border-radius: 45px;
+    font-size: 26px;
+    font-weight: 700;
+    color: #ffffff;
+    background: rgb(var(--unic-color));
+}
+
+.textbutton:active {
+    background: rgba(var(--unic-color), 0.6);
+}
+
+/* Прокрутка */
+*::-webkit-scrollbar-track {
+    background: rgb(var(--black-color));
+}
+*::-webkit-scrollbar-thumb {
+    border: 4px solid rgb(var(--black-color));
+}
+
+/* Градиенты */
+.gradient {
+    height: 130px;
+}
+
+/* Градиент из серого в чёрный */
+.gradient_gray-black {
+    background: linear-gradient(to bottom, rgb(var(--background-color)), rgb(var(--black-color)));
+}
+
+/* Градиент из чёрного в серый */
+.gradient_black-gray {
+    background: linear-gradient(to bottom, rgb(var(--black-color)), rgb(var(--background-color)));
+}
+
+/* Серверная информация для входа */
+#info_section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    background: rgb(var(--background-color));
+}
+
+h1 {
+    font-size: 75px;
+    font-weight: 700;
+    height: 184px;
+}
+
+.dynamic_auth_textbutton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 150px;
+    min-width: 300px;
+}
+
+.auth_textbutton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 41px;
+    padding: 14px 20px;
+    filter: drop-shadow(0 0 10px rgb(var(--unic-color)));
+    transition: 600ms padding, 600ms filter;
+}
+
+/* Печатанье */
+.cursor {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ccc;
+    margin-left: 0.1rem;
+    width: 3px;
+    animation: blink 1s infinite;
+    height: 70px;
+}
+
+.cursor.typing {
+    animation: none;
+}
+
+@keyframes blink {
+    0% {
+        background-color: #ccc;
+    }
+    49% {
+        background-color: #ccc;
+    }
+    50% {
+        background-color: transparent;
+    }
+    99% {
+        background-color: transparent;
+    }
+    100% {
+        background-color: #ccc;
+    }
+}
+
+/* Уникальность */
+#unic_section {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    background: rgb(var(--black-color));
+}
+
+#unic_div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 245px;
+    width: 1110px;
+}
+
+.unic {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 245px;
+
+    opacity: 0;
+    transform: translateX(-200px);
+    filter: blur(5px);
+    transition: 1000ms opacity, 800ms filter, 1000ms transform;
+}
+
+.unic:nth-child(2) {
+    transition-delay: 200ms;
+}
+
+.unic:nth-child(3) {
+    transition-delay: 400ms;
+}
+
+.unic:nth-child(4) {
+    transition-delay: 600ms;
+}
+
+.unic.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0px);
+}
+
+.unic_span {
+    display: flex;
+    align-items: center;
+    min-height: 45px;
+}
+
+.unic_img {
+    transition: 1000ms;
+}
+
+#crossed_out_coin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 170px;
+    background: url("media/barrier.webp") no-repeat;
+    background-size: cover;
+    filter: drop-shadow(0 0 50px rgb(204, 25, 9));
+    transform: rotate(-4deg);
+}
+
+#crossed_out_coin:hover {
+    filter: drop-shadow(0 0 80px rgb(204, 25, 9));
+    transform: rotate(-9deg);
+}
+
+#moneta {
+    filter: drop-shadow(0 0 30px rgb(255, 170, 0));
+    transform: rotate(4deg);
+    width: 47%;
+    height: 47%;
+}
+
+#crossed_out_coin:hover #moneta {
+    transform: rotate(14deg);
+}
+
+#amogus {
+    filter: drop-shadow(0 0 40px rgba(255, 170, 0, 0.7));
+    transform: rotate(3.5deg);
+    width: 150px;
+    height: 170px;
+}
+
+#amogus:hover {
+    filter: drop-shadow(0 0 60px rgba(255, 170, 0, 0.75));
+    transform: rotate(8.5deg);
+}
+
+#calendar {
+    filter: drop-shadow(0 0 60px rgb(56, 104, 224));
+    transform: rotate(-5.5deg);
+    width: 160px;
+    height: 170px;
+}
+
+#calendar:hover {
+    filter: drop-shadow(0 0 100px rgb(56, 104, 224));
+    transform: rotate(-8.5deg);
+}
+
+#heart {
+    filter: drop-shadow(0 0 50px rgba(255, 9, 0, 0.7));
+    transform: rotate(4.6deg);
+    width: 170px;
+    height: 170px;
+}
+
+#heart:hover {
+    filter: drop-shadow(0 0 70px rgba(255, 9, 0, 0.9));
+    transform: rotate(9.6deg);
+}
+
+/* Преимущества */
+#advantages_section {
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+    background: rgb(var(--black-color));
+}
+
+.advantage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.advantage_div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    text-align: left;
+    height: 100%;
+    width: 515px;
+
+    transition: 1200ms opacity, 1000ms transform;
+    opacity: 0;
+}
+
+.advantage_div:nth-child(odd) {
+    transform: translateX(-100px);
+}
+
+.advantage_div:nth-child(even) {
+    transform: translateX(100px);
+}
+
+.advantage_div.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.advantage_text {
+    width: 350px;
+}
+
+.advantage_img {
+    border-radius: 50px;
+    border: solid #A4A4A4 3px;
+    box-shadow: 0 0 25px rgba(164, 164, 164, 0.9);
+    width: 600px;
+    min-height: 300px;
+    height: fit-content;
+    overflow: hidden;
+    object-fit: cover;
+    transition: 1200ms opacity, 1000ms transform, 500ms border, 500ms box-shadow;
+    opacity: 0;
+}
+
+.advantage_img:nth-child(odd) {
+    transform: translateX(-35px);
+}
+
+.advantage_img:nth-child(even) {
+    transform: translateX(35px);
+}
+
+.advantage_img.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.advantage_img:hover {
+    border: solid rgb(var(--unic-color)) 3px;
+    box-shadow: 0 0 50px rgb(var(--unic-color));
+}
+
+/* Нижняя регистрация */
+#registration_section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(var(--background-color));
+    height: 400px;
+}
+
+#registration {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background: rgba(var(--black-color), 0.34);
+    width: 910px;
+    height: 290px;
+    border-radius: 50px;
+
+    transform: translateY(50px);
+    transition: 500ms transform;
+}
+
+#registration.show {
+    transform: translateY(0px);
+}
+
+#registration_text {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#registration_text h3 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 49px;
+}
+
+#registration_section .dynamic_auth_textbutton {
+    min-height: 79px;
+}
+
+/* Ютуб */
+#youtube_section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 60px 0;
+}
+
+#not_sure_youtube {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 60px;
+
+    transform: translateY(70px);
+    transition: 500ms transform;
+}
+
+#not_sure_youtube.show {
+    transform: translateY(0px);
+}
+
+#youtube_section iframe {
+    width: 905px;
+    height: 510px;
+    transition: 500ms;
+}
+
+#youtube_section iframe.show {
+    width: 985px;
+    height: 555px;
+}
+
+/* Подвал */
+footer {
+    background: rgb(var(--black-color));
+}
+
+@media (min-width: 1201px) {
+    .for-pc {
+        display: block;
+    }
+
+    .for-mobile {
+        display: none;
+    }
+
+    h1 {
+        width: 1100px;
+    }
+
+    .auth_textbutton:hover {
+        padding: 19px 30px;
+        filter: drop-shadow(0 0 20px rgb(var(--unic-color)));
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 1300px) {
+    /* Серверная информация для входа */
+    .for-pc {
+        display: none;
+    }
+
+    .for-mobile {
+        display: block;
+    }
+
+    #info_section {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90vh;
+    }
+
+    h1 {
+        font-size: 150px;
+    }
+
+    .info_server_text {
+        font-size: 40px;
+        line-height: 60px;
+    }
+
+    .dynamic_auth_textbutton {
+        margin: 50px;
+    }
+
+    .auth_textbutton {
+        width: 700px;
+        height: 100px;
+        font-size: 44px;
+    }
+
+    /* Уникальности сервера */
+    #unic_div {
+        height: 1000px;
+        width: 900px;
+    }
+
+    .unic {
+        width: 50%;
+        font-size: 40px;
+        height: 375px;
+    }
+
+    #crossed_out_coin {
+        width: 230px;
+        height: 230px;
+        background: url("media/barrier.webp") no-repeat;
+        background-size: cover;
+    }
+
+    #moneta {
+        width: 47%;
+        height: 47%;
+    }
+
+    #amogus {
+        width: 230px;
+        height: 230px;
+    }
+
+    #calendar {
+        width: 230px;
+        height: 230px;
+    }
+
+    #heart {
+        width: 230px;
+        height: 230px;
+    }
+
+    /* Преимущества сервера */
+    .advantage {
+        padding: 50px;
+        gap: 50px;
+    }
+
+    .advantage:nth-child(odd) {
+        flex-direction: column;
+    }
+
+    .advantage:nth-child(even) {
+        flex-direction: column-reverse;
+    }
+
+    .advantage_img {
+        width: 100%;
+        height: fit-content;
+    }
+
+    .advantage_div {
+        width: max-content;
+    }
+
+    .advantage_text {
+        font-size: 40px;
+        width: 100%;
+    }
+
+    /* Регистрация */
+    #registration_section {
+        margin: 230px 0;
+    }
+
+    #registration {
+        padding: 50px;
+        height: 550px;
+        width: 90%;
+    }
+
+    #registration_text {
+        gap: 35px;
+    }
+
+    #registration_text h3 {
+        font-size: 100px;
+        line-height: 110px;
+    }
+
+    #registration_text p {
+        font-size: 32px;
+    }
+
+    /* Не уверены */
+    #not_sure_youtube {
+        font-size: 100px;
+        line-height: 110px;
+    }
+}
