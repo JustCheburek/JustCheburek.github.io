@@ -36,6 +36,20 @@ main {
     box-shadow: 0 0 50px rgba(var(--unic-color), 0.1);
 }
 
+.old::before {
+    content: "неактуально";
+    /* Размещение */
+    align-self: flex-end;
+    position: absolute;
+
+    /* Отображение */
+    color: rgb(var(--unic-color));
+    backdrop-filter: blur(3px);
+    transform: rotate(15deg) translateY(20px);
+    font-size: 20px;
+    font-weight: 700;
+}
+
 /* Изображение */
 .news_image {
     min-height: 250px;
