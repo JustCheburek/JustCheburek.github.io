@@ -72,7 +72,7 @@
         <!-- Бургер иконка -->
         <div class="burger_icon">
             <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="60"
-                 height="60" x="0" y="0" viewBox="0 0 64 64" xml:space="preserve" class=""><g transform="matrix(1.3000000000000005,0,0,1.3000000000000005,-9.600000000000016,-9.600000000000016)"><path d="M53 21H11c-1.7 0-3-1.3-3-3s1.3-3 3-3h42c1.7 0 3 1.3 3 3s-1.3 3-3 3zM53 35H11c-1.7 0-3-1.3-3-3s1.3-3 3-3h42c1.7 0 3 1.3 3 3s-1.3 3-3 3zM53 49H11c-1.7 0-3-1.3-3-3s1.3-3 3-3h42c1.7 0 3 1.3 3 3s-1.3 3-3 3z" fill="#00adb5" data-original="#000000" class=""></path></g></svg>
+                 height="60" x="0" y="0" viewBox="0 0 64 64" xml:space="preserve"><g transform="matrix(1.3000000000000005,0,0,1.3000000000000005,-9.600000000000016,-9.600000000000016)"><path d="M53 21H11c-1.7 0-3-1.3-3-3s1.3-3 3-3h42c1.7 0 3 1.3 3 3s-1.3 3-3 3zM53 35H11c-1.7 0-3-1.3-3-3s1.3-3 3-3h42c1.7 0 3 1.3 3 3s-1.3 3-3 3zM53 49H11c-1.7 0-3-1.3-3-3s1.3-3 3-3h42c1.7 0 3 1.3 3 3s-1.3 3-3 3z" fill="#00adb5" data-original="#000000"></path></g></svg>
         </div>
 
         <!-- Навигация -->
@@ -81,17 +81,7 @@
                 <!-- Основная навигация -->
                 <a href="./" class="nav_text">Главная</a>
                 <a href="./" class="nav_text">Магазин</a>
-                <details class="nav_text no-anim">
-                    <summary class="unic_color_marker subsection">
-                        <a href="./rules">
-                            Правила
-                        </a>
-                    </summary>
-                    <div id="nav_opening_text">
-                        <a href="./mods" class="subsection" id="indicator">Модификации</a>
-                        <a href="./blacklist" class="subsection">Запрещёнка</a>
-                    </div>
-                </details>
+                <a href="./rules" class="nav_text" id="indicator">Правила</a>
                 <a href="./news" class="nav_text">Новости</a>
                 <a href="./features" class="nav_text">Фичи</a>
             </div>
@@ -130,307 +120,348 @@
 </header>
 
 <main>
-    <div id="max_size" class="modifications_box">
-        <h1 class="unic_color center_text">Модификации</h1>
-
-        <div>
-            <h2 class="center_text list_text unic_color" id="mods">Разрешённые моды</h2>
-            <ul id="mods_list" class="list">
+    <div id="max_size">
+        <nav>
+            <ul id="subsections" class="not_indent">
                 <li>
-                    <a href="https://modrinth.com/mod/afkpeace" class="unic_color" target="_blank">
-                        AFKPeace
-                    </a>
+                    <a href="./rules">Правила</a>
                 </li>
                 <li>
-                    <a href="https://client.badlion.net/" class="unic_color" target="_blank">
-                        Badlion Client
-                    </a>
+                    <a href="./mods" class="unic_color">Модификации</a>
                 </li>
                 <li>
-                    <a href="https://modrinth.com/mod/better-advancementsr" class="unic_color" target="_blank">
-                        Better Advancements
-                    </a>
-                </li>
-                <li>
-                    <a href="https://cursefire.com/minecraft/mc-mods/better-dropped-items" class="unic_color"
-                       target="_blank">
-                        Better Dropped Items
-                    </a>
-                </li>
-                <li>
-                    <a href="https://modrinth.com/mod/blur-fabric" class="unic_color" target="_blank">
-                        Blur
-                    </a>
-                </li>
-                <li>
-                    <a href="https://modrinth.com/mod/bobby" class="unic_color" target="_blank">
-                        Bobby
-                    </a>
-                </li>
-                <li>
-                    <a href="https://modrinth.com/mod/chat-heads" class="unic_color" target="_blank">
-                        Chat Heads
-                    </a>
-                </li>
-                <li>
-                    <a href="https://curseforge.com/minecraft/mc-mods/chat-up" class="unic_color" target="_blank">
-                        Chat Up
-                    </a>
-                </li>
-                <li>
-                    <a href="https://modrinth.com/mod/colormatic" class="unic_color" target="_blank">
-                        Colormatic
-                    </a>
-                </li>
-                <li>
-                    <a href="https://modrinth.com/mod/craftpresence" class="unic_color" target="_blank">
-                        CraftPresence
-                    </a>
-                </li>
-                <li>
-                    <a href="https://modrinth.com/mod/fabric-api" class="unic_color" target="_blank">
-                        Fabric API
-                    </a>
-                </li>
-                <li>
-                    <a href="https://modrinth.com/mod/gamma-utils" class="unic_color" target="_blank">
-                        Gamma Utils
-                    </a>
-                </li>
-                <li>
-                    <a href="https://modrinth.com/mod/held-item-info" class="unic_color" target="_blank">
-                        Held Item Info
-                    </a>
-                </li>
-                <li>
-                    <a href="https://irisshaders.net/" class="unic_color" target="_blank">
-                        Iris Shaders
-                    </a>
-                </li>
-                <li>
-                    <a href="https://modrinth.com/mod/jei" class="unic_color" target="_blank">
-                        Just Enough Items
-                    </a>
-                </li>
-                <li>
-                    <a href="https://modrinth.com/mod/lambdynamiclights" class="unic_color" target="_blank">
-                        LambDynamicLights
-                    </a>
-                </li>
-                <li>
-                    <a href="https://modrinth.com/mod/light-overlay" class="unic_color" target="_blank">
-                        Light Overlay
-                    </a>
-                </li>
-                <li>
-                    <a href="https://curseforge.com/minecraft/mc-mods/litematica" class="unic_color" target="_blank">
-                        Litematica
-                    </a>
-                    (easy place mod)
-                </li>
-                <li>
-                    <a href="https://modrinth.com/mod/lithium" class="unic_color" target="_blank">
-                        Lithium
-                    </a>
-                </li>
-                <li>
-                    <a href="https://curseforge.com/minecraft/mc-mods/minihud" class="unic_color" target="_blank">
-                        MiniHUD
-                    </a>
-                </li>
-                <li>
-                    <a href="https://modrinth.com/mod/modmenu" class="unic_color" target="_blank">
-                        Mod Menu
-                    </a>
-                </li>
-                <li>
-                    <a href="https://modrinth.com/mod/mouse-wheelie" class="unic_color" target="_blank">
-                        Mouse Wheelie
-                    </a>
-                </li>
-                <li>
-                    <a href="https://modrinth.com/mod/offershud" class="unic_color" target="_blank">
-                        OffersHUD
-                    </a>
-                </li>
-                <li>
-                    <a href="https://optifine.net/downloads" class="unic_color" target="_blank">
-                        OptiFine
-                    </a>
-                    (<a href="https://curseforge.com/minecraft/mc-mods/optifabric" class="unic_color" target="_blank">OptiFabric</a>)
-                </li>
-                <li>
-                    <a href="https://modrinth.com/mod/presence-footsteps" class="unic_color" target="_blank">
-                        Presence Footsteps
-                    </a>
-                </li>
-                <li>
-                    <a href="https://replaymod.com/download/" class="unic_color" target="_blank">
-                        Replay Mod
-                    </a>
-                </li>
-                <li>
-                    <a href="https://modrinth.com/mod/shulkerboxtooltip" class="unic_color" target="_blank">
-                        Shulker Box Tooltip
-                    </a>
-                </li>
-                <li>
-                    <a href="https://modrinth.com/mod/smoothboot-fabric" class="unic_color" target="_blank">
-                        Smooth Boot
-                    </a>
-                </li>
-                <li>
-                    <a href="https://modrinth.com/mod/sodium" class="unic_color" target="_blank">
-                        Sodium
-                    </a>
-                    (<a href="https://modrinth.com/mod/sodium" class="unic_color" target="_blank">Sodium Extra</a>,
-                    <a href="https://modrinth.com/mod/sodium" class="unic_color" target="_blank">Reese's Sodium Options</a>)
-                </li>
-                <li>
-                    <a href="https://modrinth.com/mod/starlight" class="unic_color" target="_blank">
-                        Starlight
-                    </a>
-                </li>
-                <li>
-                    <a href="https://modrinth.com/mod/stendhal" class="unic_color" target="_blank">
-                        Stendhal
-                    </a>
-                </li>
-                <li>
-                    <a href="https://modrinth.com/plugin/simple-voice-chat/versions?c=release&p=2" class="unic_color" target="_blank">
-                        VoiceChat (версия 2.3.28)
-                    </a>
-                </li>
-                <li>
-                    <a href="https://modrinth.com/mod/zoomify" class="unic_color" target="_blank">
-                        Zoomify
-                    </a>
+                    <a href="./blacklist">Выражения</a>
                 </li>
             </ul>
-        </div>
+        </nav>
 
-        <div>
-            <h2 class="center_text list_text unic_color">Разрешённые ресурспаки</h2>
-            <ul id="rp_list" class="list">
-                <li>
-                    <a href="https://modrinth.com/resourcepack/redstonetweaksresourcepack/version/1.3_3dDust"
-                       class="unic_color" target="_blank">
-                        3D Redstone Dust
-                    </a>
-                </li>
-                <li>
-                    <a href="https://modrinth.com/resourcepack/default-dark-mode" class="unic_color" target="_blank">
-                        Default Dark Mode
-                    </a>
-                </li>
-                <li>
-                    <a href="https://cursefire.com/minecraft/texture-packs/fresh-animations" target="_blank"
-                       class="unic_color">
-                        FreshAnimations
-                    </a>
-                    +
-                    <a href="https://cursefire.com/minecraft/texture-packs/fresh-animations-extensions" target="_blank"
-                       class="unic_color">
-                        addons
-                    </a>
-                </li>
-                <li>
-                    <a href="download/lowfire.zip" class="unic_color" target="_blank">
-                        Low fire
-                    </a>
-                </li>
-                <li>
-                    <a href="download/MineBridge_Totems.zip" class="unic_color" target="_blank" id="minebridge_totems">
-                        MineBridge Totems
-                    </a>
-                </li>
-            </ul>
-        </div>
+        <div id="rules" class="modifications">
+            <h1 class="unic_color center_text">Модификации</h1>
 
-        <div>
-            <div class="list_text center_text">
-                <h2 class="unic_color">Запрещено</h2>
-                <h5>(в любом виде)</h5>
+            <div id="allowed_mods">
+                <h2 class="center_text list_text unic_color" id="mods">Разрешённые моды</h2>
+                <ul id="mods_list" class="list">
+                    <li>
+                        <a href="https://modrinth.com/mod/afkpeace" class="unic_color" target="_blank">
+                            AFKPeace
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://client.badlion.net/" class="unic_color" target="_blank">
+                            Badlion Client
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://modrinth.com/mod/better-advancementsr" class="unic_color" target="_blank">
+                            Better Advancements
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://cursefire.com/minecraft/mc-mods/better-dropped-items" class="unic_color"
+                           target="_blank">
+                            Better Dropped Items
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://modrinth.com/mod/blur-fabric" class="unic_color" target="_blank">
+                            Blur
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://modrinth.com/mod/bobby" class="unic_color" target="_blank">
+                            Bobby
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://modrinth.com/mod/chat-heads" class="unic_color" target="_blank">
+                            Chat Heads
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://curseforge.com/minecraft/mc-mods/chat-up" class="unic_color" target="_blank">
+                            Chat Up
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://modrinth.com/mod/colormatic" class="unic_color" target="_blank">
+                            Colormatic
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://modrinth.com/mod/craftpresence" class="unic_color" target="_blank">
+                            CraftPresence
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://modrinth.com/mod/fabric-api" class="unic_color" target="_blank">
+                            Fabric API
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://modrinth.com/mod/gamma-utils" class="unic_color" target="_blank">
+                            Gamma Utils
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://modrinth.com/mod/held-item-info" class="unic_color" target="_blank">
+                            Held Item Info
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://irisshaders.net/" class="unic_color" target="_blank">
+                            Iris Shaders
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://modrinth.com/mod/jei" class="unic_color" target="_blank">
+                            Just Enough Items
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://modrinth.com/mod/lambdynamiclights" class="unic_color" target="_blank">
+                            LambDynamicLights
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://modrinth.com/mod/light-overlay" class="unic_color" target="_blank">
+                            Light Overlay
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://curseforge.com/minecraft/mc-mods/litematica" class="unic_color" target="_blank">
+                            Litematica
+                        </a>
+                        (easy place mod)
+                    </li>
+                    <li>
+                        <a href="https://modrinth.com/mod/lithium" class="unic_color" target="_blank">
+                            Lithium
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://curseforge.com/minecraft/mc-mods/minihud" class="unic_color" target="_blank">
+                            MiniHUD
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://modrinth.com/mod/modmenu" class="unic_color" target="_blank">
+                            Mod Menu
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://modrinth.com/mod/mouse-wheelie" class="unic_color" target="_blank">
+                            Mouse Wheelie
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://modrinth.com/mod/offershud" class="unic_color" target="_blank">
+                            OffersHUD
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://optifine.net/downloads" class="unic_color" target="_blank">
+                            OptiFine
+                        </a>
+                        (<a href="https://curseforge.com/minecraft/mc-mods/optifabric" class="unic_color" target="_blank">OptiFabric</a>)
+                    </li>
+                    <li>
+                        <a href="https://modrinth.com/mod/presence-footsteps" class="unic_color" target="_blank">
+                            Presence Footsteps
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://replaymod.com/download/" class="unic_color" target="_blank">
+                            Replay Mod
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://modrinth.com/mod/shulkerboxtooltip" class="unic_color" target="_blank">
+                            Shulker Box Tooltip
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://modrinth.com/mod/smoothboot-fabric" class="unic_color" target="_blank">
+                            Smooth Boot
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://modrinth.com/mod/sodium" class="unic_color" target="_blank">
+                            Sodium
+                        </a>
+                        (<a href="https://modrinth.com/mod/sodium" class="unic_color" target="_blank">Sodium Extra</a>,
+                        <a href="https://modrinth.com/mod/sodium" class="unic_color" target="_blank">Reese's Sodium Options</a>)
+                    </li>
+                    <li>
+                        <a href="https://modrinth.com/mod/starlight" class="unic_color" target="_blank">
+                            Starlight
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://modrinth.com/mod/stendhal" class="unic_color" target="_blank">
+                            Stendhal
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://modrinth.com/plugin/simple-voice-chat/versions?c=release&p=2" class="unic_color" target="_blank">
+                            VoiceChat (версия 2.3.28)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://modrinth.com/mod/zoomify" class="unic_color" target="_blank">
+                            Zoomify
+                        </a>
+                    </li>
+                </ul>
             </div>
 
-            <ul id="cheats_list" class="list">
-                <li>
-                    Модификации, выполняющие действия за игрока (ИИ, принтер и так далее)
-                </li>
-                <li>
-                    Чит-модификации
-                </li>
-                <li>
-                    Aristois
-                </li>
-                <li>
-                    Baritone
-                </li>
-                <li>
-                    Better PVP
-                </li>
-                <li>
-                    BetterClicker
-                </li>
-                <li>
-                    ClientCommands
-                </li>
-                <li>
-                    CMDCam
-                </li>
-                <li>
-                    FindMe
-                </li>
-                <li>
-                    FreeCam
-                </li>
-                <li>
-                    Impact
-                </li>
-                <li>
-                    Inertia
-                </li>
-                <li>
-                    InvMove
-                </li>
-                <li>
-                    Jello
-                </li>
-                <li>
-                    LavaClearView
-                </li>
-                <li>
-                    MultiConnect (используйте только ViaFabric/Forge)
-                </li>
-                <li>
-                    NoFog (используйте Sodium Extra или OptiFine)
-                </li>
-                <li>
-                    SeedCracker (а также другие моды и программы, выполняющие функции этого мода)
-                </li>
-                <li>
-                    Sigma
-                </li>
-                <li>
-                    Tweakeroo
-                </li>
-                <li>
-                    VoxelMap
-                </li>
-                <li>
-                    Xaero's Minimap
-                </li>
-                <li>
-                    Wall-Jump
-                </li>
-                <li>
-                    Wurst
-                </li>
-                <li>
-                    Xray
-                </li>
-            </ul>
+            <div id="allowed_rps">
+                <h2 class="center_text list_text unic_color">Разрешённые ресурспаки</h2>
+                <ul id="rp_list" class="list">
+                    <li>
+                        <a href="https://modrinth.com/resourcepack/redstonetweaksresourcepack/version/1.3_3dDust"
+                           class="unic_color" target="_blank">
+                            3D Redstone Dust
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://modrinth.com/resourcepack/default-dark-mode" class="unic_color" target="_blank">
+                            Default Dark Mode
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://cursefire.com/minecraft/texture-packs/fresh-animations" target="_blank"
+                           class="unic_color">
+                            FreshAnimations
+                        </a>
+                        +
+                        <a href="https://cursefire.com/minecraft/texture-packs/fresh-animations-extensions" target="_blank"
+                           class="unic_color">
+                            addons
+                        </a>
+                    </li>
+                    <li>
+                        <a href="download/lowfire.zip" class="unic_color" target="_blank">
+                            Low fire
+                        </a>
+                    </li>
+                    <li>
+                        <a href="download/MineBridge_Totems.zip" class="unic_color" target="_blank" id="minebridge_totems">
+                            MineBridge Totems
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="forbidden">
+                <div class="list_text center_text">
+                    <h2 class="unic_color">Запрещено</h2>
+                    <h5>(в любом виде)</h5>
+                </div>
+
+                <ul id="cheats_list" class="list">
+                    <li>
+                        Модификации, выполняющие действия за игрока (ИИ, принтер и так далее)
+                    </li>
+                    <li>
+                        Чит-модификации
+                    </li>
+                    <li>
+                        Aristois
+                    </li>
+                    <li>
+                        Baritone
+                    </li>
+                    <li>
+                        Better PVP
+                    </li>
+                    <li>
+                        BetterClicker
+                    </li>
+                    <li>
+                        ClientCommands
+                    </li>
+                    <li>
+                        CMDCam
+                    </li>
+                    <li>
+                        FindMe
+                    </li>
+                    <li>
+                        FreeCam
+                    </li>
+                    <li>
+                        Impact
+                    </li>
+                    <li>
+                        Inertia
+                    </li>
+                    <li>
+                        InvMove
+                    </li>
+                    <li>
+                        Jello
+                    </li>
+                    <li>
+                        LavaClearView
+                    </li>
+                    <li>
+                        MultiConnect (используйте только ViaFabric/Forge)
+                    </li>
+                    <li>
+                        NoFog (используйте Sodium Extra или OptiFine)
+                    </li>
+                    <li>
+                        SeedCracker (а также другие моды и программы, выполняющие функции этого мода)
+                    </li>
+                    <li>
+                        Sigma
+                    </li>
+                    <li>
+                        Tweakeroo
+                    </li>
+                    <li>
+                        VoxelMap
+                    </li>
+                    <li>
+                        Xaero's Minimap
+                    </li>
+                    <li>
+                        Wall-Jump
+                    </li>
+                    <li>
+                        Wurst
+                    </li>
+                    <li>
+                        Xray
+                    </li>
+                </ul>
+            </div>
         </div>
+
+        <nav class="for-pc">
+            <ol id="on_this_page" class="not_indent">
+                <li>
+                    <h4 class="unic_color">
+                        На этой странице
+                    </h4>
+                </li>
+                <li>
+                    <a href="#allowed_mods">
+                        Разрешённые моды
+                    </a>
+                </li>
+                <li>
+                    <a href="#allowed_rps">
+                        Разрешённые ресурспаки
+                    </a>
+                </li>
+                <li>
+                    <a href="#forbidden">
+                        Запрещено
+                    </a>
+                </li>
+            </ol>
+        </nav>
     </div>
 </main>
 

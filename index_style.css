@@ -395,14 +395,6 @@ footer {
 }
 
 @media (min-width: 1201px) {
-    .for-pc {
-        display: block;
-    }
-
-    .for-mobile {
-        display: none;
-    }
-
     h1 {
         width: 1100px;
     }
@@ -416,14 +408,6 @@ footer {
 /* Адаптивность */
 @media (max-width: 1300px) {
     /* Серверная информация для входа */
-    .for-pc {
-        display: none;
-    }
-
-    .for-mobile {
-        display: block;
-    }
-
     #info_section {
         margin: 0;
         display: flex;

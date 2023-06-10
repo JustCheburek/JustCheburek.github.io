@@ -135,13 +135,18 @@ img {
 }
 
 /* Отступ */
-ol, ul {
+ol:not(.not_indent), ul:not(.not_indent) {
     padding-left: 30px;
 }
 
 /* Нажатие */
 a.unic_color:active, button.unic_color:active, summary.unic_color:active, #indicator:active {
     color: rgba(var(--unic-color), 0.8);
+}
+
+/* Убирание маркера */
+.remove_marker {
+    list-style-type: none;
 }
 
 /* Прокрутка */
@@ -392,8 +397,26 @@ footer > span {
     justify-content: space-between;
 }
 
+@media (min-width: 1201px) {
+    .for-pc {
+        display: block;
+    }
+
+    .for-mobile {
+        display: none;
+    }
+}
+
 /* Адаптивность */
 @media (max-width: 1200px) {
+    .for-pc {
+        display: none;
+    }
+
+    .for-mobile {
+        display: block;
+    }
+
     /* Весь сайт */
     html {
         scroll-padding: 130px;  /* размер шапки */

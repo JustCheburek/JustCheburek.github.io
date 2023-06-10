@@ -73,7 +73,7 @@
         <!-- Бургер иконка -->
         <div class="burger_icon">
             <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="60"
-                 height="60" x="0" y="0" viewBox="0 0 64 64" xml:space="preserve" class=""><g transform="matrix(1.3000000000000005,0,0,1.3000000000000005,-9.600000000000016,-9.600000000000016)"><path d="M53 21H11c-1.7 0-3-1.3-3-3s1.3-3 3-3h42c1.7 0 3 1.3 3 3s-1.3 3-3 3zM53 35H11c-1.7 0-3-1.3-3-3s1.3-3 3-3h42c1.7 0 3 1.3 3 3s-1.3 3-3 3zM53 49H11c-1.7 0-3-1.3-3-3s1.3-3 3-3h42c1.7 0 3 1.3 3 3s-1.3 3-3 3z" fill="#00adb5" data-original="#000000" class=""></path></g></svg>
+                 height="60" x="0" y="0" viewBox="0 0 64 64" xml:space="preserve"><g transform="matrix(1.3000000000000005,0,0,1.3000000000000005,-9.600000000000016,-9.600000000000016)"><path d="M53 21H11c-1.7 0-3-1.3-3-3s1.3-3 3-3h42c1.7 0 3 1.3 3 3s-1.3 3-3 3zM53 35H11c-1.7 0-3-1.3-3-3s1.3-3 3-3h42c1.7 0 3 1.3 3 3s-1.3 3-3 3zM53 49H11c-1.7 0-3-1.3-3-3s1.3-3 3-3h42c1.7 0 3 1.3 3 3s-1.3 3-3 3z" fill="#00adb5" data-original="#000000"></path></g></svg>
         </div>
 
         <!-- Навигация -->
@@ -82,17 +82,7 @@
                 <!-- Основная навигация -->
                 <a href="./" class="nav_text">Главная</a>
                 <a href="./" class="nav_text">Магазин</a>
-                <details class="nav_text no-anim">
-                    <summary class="subsection">
-                        <span id="indicator">
-                            Правила
-                        </span>
-                    </summary>
-                    <div id="nav_opening_text">
-                        <a href="./mods" class="subsection">Модификации</a>
-                        <a href="./blacklist" class="subsection">Запрещёнка</a>
-                    </div>
-                </details>
+                <a href="./rules" class="nav_text" id="indicator">Правила</a>
                 <a href="./news" class="nav_text">Новости</a>
                 <a href="./features" class="nav_text">Фичи</a>
             </div>
@@ -132,421 +122,492 @@
 
 <main>
     <div id="max_size">
-        <h1 class="bold-font unic_color center_text">
-            На нашем сервере действует уникальная система наказаний
-        </h1>
-        <div id="info_mostiki">
-            <p>
-                Бан навсегда - 140 мостиков
+        <nav>
+            <ul id="subsections" class="not_indent">
+                <li>
+                    <a href="./rules" class="unic_color">Правила</a>
+                </li>
+                <li>
+                    <a href="./mods">Модификации</a>
+                </li>
+                <li>
+                    <a href="./blacklist">Выражения</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div id="rules">
+            <h1 class="bold-font unic_color center_text">
+                На нашем сервере действует уникальная система наказаний
+            </h1>
+            <div id="info_mostiki">
+                <p>
+                    Бан навсегда - 140 мостиков
+                </p>
+                <p>
+                    Бан на 2 недели - 100 мостиков
+                </p>
+                <p>
+                    Мут в текстовых и голосовых каналах на 3 недели - 70 мостиков
+                </p>
+                <p>
+                    Минимальное количество мостиков - 0
+                </p>
+                <p>
+                    Количество выдаваемых мостиков решает только модерация и администрация
+                </p>
+            </div>
+
+            <!--
+            Правила
+            -->
+            <section class="rules_container" id="general">
+                <div class="heading_rules">
+                    <a href="#general" class="rule_number_box center">
+                        <ion-icon name="link-outline" class="rule_link"></ion-icon>
+                        <span class="main_rule_number center">1</span>
+                    </a>
+
+                    <button class="heading_rules_text">
+                        Общение
+                    </button>
+                </div>
+
+                <div id="general_rules" class="rules_box open">
+                    <div class="rules">
+                        <div class="rule" id="1.1.1">
+                            <a href="#1.1.1" class="rule_number center">
+                                1.1.1
+                            </a>
+                            <div class="rule_text">
+                                Оскорбления запрещены - 10-50 мостиков
+                            </div>
+                        </div>
+                        <div class="rule" id="1.1.2">
+                            <a href="#1.1.2" class="rule_number center">
+                                1.1.2
+                            </a>
+                            <div class="rule_text">
+                                Оскорбления модерации и администрации запрещены - 40-100 мостиков
+                            </div>
+                        </div>
+                        <div class="rule" id="1.1.3">
+                            <a href="#1.1.3" class="rule_number center">
+                                1.1.3
+                            </a>
+                            <div class="rule_text">
+                                Оскорбления проекта запрещено - 10-100 мостиков
+                            </div>
+                        </div>
+                        <div class="rule" id="1.2">
+                            <a href="#1.2" class="rule_number center">
+                                1.2
+                            </a>
+                            <div class="rule_text">
+                                Оскорбительные ники и аватарки запрещены - 30-70 мостиков
+                            </div>
+                        </div>
+                        <div class="rule" id="1.3">
+                            <a href="#1.3" class="rule_number center">1.3</a>
+                            <div class="rule_text">
+                                Для определённых сообщений существуют свои каналы (баги в #баги, идеи в #идеи) - 5-20
+                                мостиков
+                            </div>
+                        </div>
+                        <div class="rule" id="1.5">
+                            <a href="#1.5" class="rule_number center">1.5</a>
+                            <div class="rule_text">
+                                Спам и флуд категорически запрещен - 5-20 мостиков
+                            </div>
+                        </div>
+                        <div class="rule" id="1.6">
+                            <a href="#1.6" class="rule_number center">1.6</a>
+                            <div class="rule_text">
+                                Контент NSFW (18+ и т. п.) запрещен - 20-140 мостиков
+                            </div>
+                        </div>
+                        <div class="rule" id="1.7">
+                            <a href="#1.7" class="rule_number center">1.7</a>
+                            <div class="rule_text">
+                                Запрещено нарушение правил
+                                <a href="https://www.twitch.tv/creatorcamp/ru-ru/paths/rules-policies-and-guidelines/?android-app-redirect=true">
+                                    платформы Twitch.tv</a> - 35 мостиков
+                            </div>
+                        </div>
+                        <div class="rule" id="1.8">
+                            <a href="#1.8" class="rule_number center">1.8</a>
+                            <div class="rule_text">
+                                Мат не приветствуется, череда матов - 30-50 мостиков
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="rules_container" id="unknown_url">
+                <div class="heading_rules">
+                    <a href="#unknown_url" class="rule_number_box center">
+                        <ion-icon name="link-outline" class="rule_link"></ion-icon>
+                        <span class="main_rule_number center">2</span>
+                    </a>
+
+                    <button class="heading_rules_text">
+                        Сторонние ресурсы
+                    </button>
+                </div>
+
+                <div id="unknown_url_rules" class="rules_box open">
+                    <div class="rules">
+                        <div class="rule" id="2.1">
+                            <a href="#2.1" class="rule_number number">2.1</a>
+                            <div class="rule_text">
+                                Ссылки на сторонние Discord-сервера запрещены - 25-70 мостиков
+                            </div>
+                        </div>
+                        <div class="rule" id="2.2">
+                            <a href="#2.2" class="rule_number number">2.2</a>
+                            <div class="rule_text">
+                                Ссылки на сайты не связанные с нашим сервером запрещены - 25-70 мостиков
+                            </div>
+                        </div>
+                        <div class="rule" id="2.3">
+                            <a href="#2.3" class="rule_number number">2.3</a>
+                            <div class="rule_text">
+                                Реклама, не связанная с нашим проектом, без согласия администрации запрещена,
+                                <a href="https://t.me/JustCheburek">получить согласие</a> - 20-70 мостиков
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="rules_container" id="interaction_with_players">
+                <div class="heading_rules">
+                    <a href="#interaction_with_players" class="rule_number_box center">
+                        <ion-icon name="link-outline" class="rule_link"></ion-icon>
+                        <span class="main_rule_number center">3</span>
+                    </a>
+
+                    <button class="heading_rules_text">
+                        Игровая активность
+                    </button>
+                </div>
+
+                <div id="interaction_with_players_rules" class="rules_box open">
+                    <div class="rules">
+                        <div class="rule" id="3.1">
+                            <a href="#3.1" class="rule_number center">3.1</a>
+                            <div class="rule_text">
+                                Нельзя мешать никому (ходить перед его лицом, ломать блоки под ним,
+                                перед ним, стрелять в него из лука / трезубца и т.д.),
+                                пранки не должны быть обидны - суд (не ответ в течение 3 дней - 60-100 мостиков)
+                            </div>
+                        </div>
+                        <div class="rule" id="3.2">
+                            <a href="#3.2" class="rule_number center">3.2</a>
+                            <div class="rule_text">
+                                Нельзя гриферить - суд (на нём назначится откуп, нет откупа после 5 дней - 60-100 мостиков)
+                            </div>
+                        </div>
+                        <div class="rule" id="3.3">
+                            <a href="#3.3" class="rule_number center">3.3</a>
+                            <div class="rule_text">
+                                Находясь на чужой территории, соблюдайте правила её владельца<br>
+                                Правила владельца должны быть видны, понятны и доступны всем, иначе они аннулируются<br>
+                                <br>
+                                Правила считаются доступными в дс каналах:
+                                <ul>
+                                    <li>
+                                        <a target="_blank" href="https://discord.gg/dpXsEu4gUz">
+                                            #создание-города
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_blank" href="https://discord.gg/xGv8srKKsz">
+                                            #правила-территорий
+                                        </a>
+                                    </li>
+                                </ul>
+                                <br>
+                                Если вход на территорию запрещен:
+                                <ol>
+                                    <li>Граница должна быть помечена кострами / шерстью или другими выделяющимися блоками
+                                    </li>
+                                    <li>Таблички с информацией о запрете входа на выделяющихся блоках (не на всех)</li>
+                                </ol>
+                                <br>
+                                <a href="https://cdn.discordapp.com/attachments/726314300502835241/1102528654908592158/2023-05-01_19.32.47.png"
+                                   target="_blank">
+                                    Пример разметки территории
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="rules_container" id="cheats">
+                <div class="heading_rules">
+                    <a href="#cheats" class="rule_number_box center">
+                        <ion-icon name="link-outline" class="rule_link"></ion-icon>
+                        <span class="main_rule_number center">4</span>
+                    </a>
+
+                    <button class="heading_rules_text">
+                        Читы
+                    </button>
+                </div>
+
+                <div id="cheats_rules" class="rules_box open">
+                    <div class="rules">
+                        <div class="rule" id="4.1">
+                            <a href="#4.1" class="rule_number center">4.1</a>
+                            <div class="rule_text">
+                                Читы запрещены - 50-100 мостиков
+                            </div>
+                        </div>
+                        <div class="rule" id="4.2">
+                            <a href="#4.2" class="rule_number center">4.2</a>
+                            <div class="rule_text">
+                                Дюпы запрещены - 30-100 мостиков (разрешены дюпы: ковров, тнт машинки, рельс)<br>
+                                Дюп песка, гравия не работает на ядре сервера
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="rules_container" id="twinks">
+                <div class="heading_rules">
+                    <a href="#twinks" class="rule_number_box center">
+                        <ion-icon name="link-outline" class="rule_link"></ion-icon>
+                        <span class="main_rule_number center">5</span>
+                    </a>
+
+                    <button class="heading_rules_text">
+                        Твинки
+                    </button>
+                </div>
+
+                <div id="twinks_rules" class="rules_box open">
+                    <div class="rules">
+                        <div class="rule" id="5.1">
+                            <a href="#5.1" class="rule_number center">5.1</a>
+                            <div class="rule_text">
+                                Можно иметь всего 1 аккаунт - 100-140 мостиков<br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="rules_container" id="lags">
+                <div class="heading_rules">
+                    <a href="#lags" class="rule_number_box center">
+                        <ion-icon name="link-outline" class="rule_link"></ion-icon>
+                        <span class="main_rule_number center">6</span>
+                    </a>
+
+                    <button class="heading_rules_text">
+                        Лаги
+                    </button>
+                </div>
+
+                <div id="lags_rules" class="rules_box open">
+                    <div class="rules">
+                        <div class="rule" id="6.1">
+                            <a href="#6.1" class="rule_number center">6.1</a>
+                            <div class="rule_text">
+                                Лаг машины запрещены - 30-140 мостиков
+                            </div>
+                        </div>
+                        Ответственность за ТПС на сервере несут игроки
+                    </div>
+                </div>
+            </section>
+
+            <section class="rules_container" id="building">
+                <div class="heading_rules">
+                    <a href="#building" class="rule_number_box center">
+                        <ion-icon name="link-outline" class="rule_link"></ion-icon>
+                        <span class="main_rule_number center">7</span>
+                    </a>
+
+                    <button class="heading_rules_text">
+                        Строительство
+                    </button>
+                </div>
+
+                <div id="building_rules" class="rules_box open">
+                    <div class="rules">
+                        <div class="rule" id="7.1">
+                            <a href="#7.1" class="rule_number center">
+                                7.1
+                            </a>
+                            <div class="rule_text">
+                                Строительство на чужих территориях должно обговариваться с их создателями - 10-50 мостиков
+                            </div>
+                        </div>
+                        <div class="rule" id="7.2">
+                            <a href="#7.2" class="rule_number center">
+                                7.2
+                            </a>
+                            <div class="rule_text">
+                                Минимальное расстояние между чужими фермами/базами и т.д. - 150 блоков - 10-70 мостиков (в
+                                зависимости от расстояния)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="rules_container" id="trading">
+                <div class="heading_rules">
+                    <a href="#trading" class="rule_number_box center">
+                        <ion-icon name="link-outline" class="rule_link"></ion-icon>
+                        <span class="main_rule_number center">8</span>
+                    </a>
+
+                    <button class="heading_rules_text">
+                        Торговля
+                    </button>
+                </div>
+
+                <div id="trading_rules" class="rules_box open">
+                    <div class="rules">
+                        <div class="rule" id="8.1">
+                            <a href="#8.1" class="rule_number center">8.1</a>
+                            <div class="rule_text">
+                                Валюта сервера в городах и торговых зонах только алмазы, за их пределами разрешён бартер -
+                                10-70 мостиков
+                            </div>
+                        </div>
+                        <div class="rule" id="8.2">
+                            <a href="#8.2" class="rule_number center">8.2</a>
+                            <div class="rule_text">
+                                Продажа ресурсов за реальные деньги запрещена - 140 мостиков обеим сторонам
+                            </div>
+                        </div>
+                        <div class="rule" id="8.3">
+                            <a href="#8.3" class="rule_number center">8.3</a>
+                            <div class="rule_text">
+                                Запрещено намеренное создание дефицита и искусственное завышение цен на любые ресурсы.
+                                Не пытайтесь "сломать" экономику сервера - 40-100 мостиков
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="event">
+                <div class="heading_rules">
+                    <button class="semibold-font heading_rules_text unic_color">
+                        Как уменьшить число мостиков?
+                    </button>
+                </div>
+
+                <div id="event_box" class="rules_box open">
+                    <div class="rules">
+                        <div class="rule_text">
+                            Вы можете провести собственный ивент и понизить немного мостиков<br>
+                            Кол-во снимаемых мостиков зависит от:
+                            <ol>
+                                <li>Масштабности</li>
+                                <li>Кол-ва участников</li>
+                                <li>Довольны ли участники</li>
+                            </ol>
+                            <span class="underline">
+                        Модерация должна знать об ивенте
+                    </span>
+                            <br><br>
+                            Вы также можете снять мостики по курсу, если у вас меньше 140 мостиков:<br>
+                            <a href="https://www.donationalerts.com/r/kawa11fox">1 мостик = 1 рубль</a><br>
+                            В донате вы должны написать:
+                            <ol>
+                                <li>Дс ник</li>
+                                <li>Майн ник</li>
+                                <li>Запрос о снятии мостиков</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <p class="red_line">
+                Правила действуют не зависимо от стримов, видео, ролей, каналов гильдий и других факторов
             </p>
-            <p>
-                Бан на 2 недели - 100 мостиков
+            <p id="responsibility" class="red_line">
+                Ответственность всегда несёт владелец аккаунта, независимо от того, кто совершал действия над данным
+                аккаунтом
             </p>
-            <p>
-                Мут в текстовых и голосовых каналах на 3 недели - 70 мостиков
+            <p id="bypass" class="red_line">
+                Любые попытки обхода блокировок категорически запрещены и будут приводить к продлению и
+                изменению их типа на более строгий
             </p>
-            <p>
-                Минимальное количество мостиков - 0
+            <p id="report" class="red_line">
+                Если вы заметили, что кто-то нарушает правила, пишите
+                <a href="https://discord.gg/VtXNje8xHq">репорт в дискорд канале</a>
             </p>
-            <p>
-                Количество выдаваемых мостиков решает только модерация и администрация
+            <p id="moderators" class="red_line">
+                Модерация и администрация (никнеймы: JustCheburek, KawaiiFox, JustErrorVayk, Melissa21) имеют
+                большие права, чем правила, итоговое решение остаётся за ними
             </p>
         </div>
 
-        <!--
-        Правила
-        -->
-        <section class="rules_container" id="general">
-            <div class="heading_rules">
-                <a href="#general" class="rule_number_box center">
-                    <ion-icon name="link-outline" class="rule_link"></ion-icon>
-                    <span class="main_rule_number center">1</span>
-                </a>
-
-                <button class="medium-font heading_rules_text">
-                    Общение и сообщения
-                </button>
-            </div>
-
-            <div id="general_rules" class="rules_box">
-                <div class="rules">
-                    <div class="rule" id="1.1.1">
-                        <a href="#1.1.1" class="rule_number center">
-                            1.1.1
-                        </a>
-                        <div class="rule_text">
-                            Оскорбления запрещены - 10-50 мостиков
-                        </div>
-                    </div>
-                    <div class="rule" id="1.1.2">
-                        <a href="#1.1.2" class="rule_number center">
-                            1.1.2
-                        </a>
-                        <div class="rule_text">
-                            Оскорбления модерации и администрации запрещены - 40-100 мостиков
-                        </div>
-                    </div>
-                    <div class="rule" id="1.1.3">
-                        <a href="#1.1.3" class="rule_number center">
-                            1.1.3
-                        </a>
-                        <div class="rule_text">
-                            Оскорбления проекта запрещено - 10-100 мостиков
-                        </div>
-                    </div>
-                    <div class="rule" id="1.2">
-                        <a href="#1.2" class="rule_number center">
-                            1.2
-                        </a>
-                        <div class="rule_text">
-                            Оскорбительные ники и аватарки запрещены - 30-70 мостиков
-                        </div>
-                    </div>
-                    <div class="rule" id="1.3">
-                        <a href="#1.3" class="rule_number center">1.3</a>
-                        <div class="rule_text">
-                            Для определённых сообщений существуют свои каналы (баги в #баги, идеи в #идеи) - 5-20
-                            мостиков
-                        </div>
-                    </div>
-                    <div class="rule" id="1.5">
-                        <a href="#1.5" class="rule_number center">1.5</a>
-                        <div class="rule_text">
-                            Спам и флуд категорически запрещен - 5-20 мостиков
-                        </div>
-                    </div>
-                    <div class="rule" id="1.6">
-                        <a href="#1.6" class="rule_number center">1.6</a>
-                        <div class="rule_text">
-                            Контент NSFW (18+ и т. п.) запрещен - 20-140 мостиков
-                        </div>
-                    </div>
-                    <div class="rule" id="1.7">
-                        <a href="#1.7" class="rule_number center">1.7</a>
-                        <div class="rule_text">
-                            Запрещено нарушение правил
-                            <a href="https://www.twitch.tv/creatorcamp/ru-ru/paths/rules-policies-and-guidelines/?android-app-redirect=true">
-                                платформы Twitch.tv</a> - 35 мостиков
-                        </div>
-                    </div>
-                    <div class="rule" id="1.8">
-                        <a href="#1.8" class="rule_number center">1.8</a>
-                        <div class="rule_text">
-                            Мат не приветствуется, череда матов - 30-50 мостиков
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="rules_container" id="unknown_url">
-            <div class="heading_rules">
-                <a href="#unknown_url" class="rule_number_box center">
-                    <ion-icon name="link-outline" class="rule_link"></ion-icon>
-                    <span class="main_rule_number center">2</span>
-                </a>
-
-                <button class="medium-font heading_rules_text">
-                    Сторонние ресурсы
-                </button>
-            </div>
-
-            <div id="unknown_url_rules" class="rules_box">
-                <div class="rules">
-                    <div class="rule" id="2.1">
-                        <a href="#2.1" class="rule_number number">2.1</a>
-                        <div class="rule_text">
-                            Ссылки на сторонние Discord-сервера запрещены - 25-70 мостиков
-                        </div>
-                    </div>
-                    <div class="rule" id="2.2">
-                        <a href="#2.2" class="rule_number number">2.2</a>
-                        <div class="rule_text">
-                            Ссылки на сайты не связанные с нашим сервером запрещены - 25-70 мостиков
-                        </div>
-                    </div>
-                    <div class="rule" id="2.3">
-                        <a href="#2.3" class="rule_number number">2.3</a>
-                        <div class="rule_text">
-                            Реклама, не связанная с нашим проектом, без согласия администрации запрещена,
-                            <a href="https://t.me/JustCheburek">получить согласие</a> - 20-70 мостиков
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="rules_container" id="interaction_with_players">
-            <div class="heading_rules">
-                <a href="#interaction_with_players" class="rule_number_box center">
-                    <ion-icon name="link-outline" class="rule_link"></ion-icon>
-                    <span class="main_rule_number center">3</span>
-                </a>
-
-                <button class="medium-font heading_rules_text">
-                    Взаимодействие с игроками
-                </button>
-            </div>
-
-            <div id="interaction_with_players_rules" class="rules_box">
-                <div class="rules">
-                    <div class="rule" id="3.1">
-                        <a href="#3.1" class="rule_number center">3.1</a>
-                        <div class="rule_text">
-                            Нельзя мешать никому (ходить перед его лицом, ломать блоки под ним,
-                            перед ним, стрелять в него из лука / трезубца и т.д.),
-                            пранки не должны быть обидны - суд (не ответ в течение 3 дней - 60-100 мостиков)
-                        </div>
-                    </div>
-                    <div class="rule" id="3.2">
-                        <a href="#3.2" class="rule_number center">3.2</a>
-                        <div class="rule_text">
-                            Нельзя гриферить - суд (на нём назначится откуп, нет откупа после 5 дней - 60-100 мостиков)
-                        </div>
-                    </div>
-                    <div class="rule" id="3.3">
-                        <a href="#3.3" class="rule_number center">3.3</a>
-                        <div class="rule_text">
-                            Находясь на чужой территории, соблюдайте правила её владельца<br>
-                            Правила владельца должны быть видны, понятны и доступны всем, иначе они аннулируются<br>
-                            <br>
-                            Правила считаются доступными в дс каналах:
-                            <ul>
-                                <li>
-                                    <a target="_blank" href="https://discord.gg/dpXsEu4gUz">
-                                        #создание-города
-                                    </a>
-                                </li>
-                                <li>
-                                    <a target="_blank" href="https://discord.gg/xGv8srKKsz">
-                                        #правила-территорий
-                                    </a>
-                                </li>
-                            </ul>
-                            <br>
-                            Если вход на территорию запрещен:
-                            <ol>
-                                <li>Граница должна быть помечена кострами / шерстью или другими выделяющимися блоками
-                                </li>
-                                <li>Таблички с информацией о запрете входа на выделяющихся блоках (не на всех)</li>
-                            </ol>
-                            <br>
-                            <a href="https://cdn.discordapp.com/attachments/726314300502835241/1102528654908592158/2023-05-01_19.32.47.png"
-                               target="_blank">
-                                Пример разметки территории
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="rules_container" id="cheats">
-            <div class="heading_rules">
-                <a href="#cheats" class="rule_number_box center">
-                    <ion-icon name="link-outline" class="rule_link"></ion-icon>
-                    <span class="main_rule_number center">4</span>
-                </a>
-
-                <button class="medium-font heading_rules_text">
-                    Читы
-                </button>
-            </div>
-
-            <div id="cheats_rules" class="rules_box">
-                <div class="rules">
-                    <div class="rule" id="4.1">
-                        <a href="#4.1" class="rule_number center">4.1</a>
-                        <div class="rule_text">
-                            Читы запрещены - 50-100 мостиков
-                        </div>
-                    </div>
-                    <div class="rule" id="4.2">
-                        <a href="#4.2" class="rule_number center">4.2</a>
-                        <div class="rule_text">
-                            Дюпы запрещены - 30-100 мостиков (разрешены дюпы: ковров, тнт машинки, рельс)<br>
-                            Дюп песка, гравия не работает на ядре сервера
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="rules_container" id="twinks">
-            <div class="heading_rules">
-                <a href="#twinks" class="rule_number_box center">
-                    <ion-icon name="link-outline" class="rule_link"></ion-icon>
-                    <span class="main_rule_number center">5</span>
-                </a>
-
-                <button class="medium-font heading_rules_text">
-                    Твинки
-                </button>
-            </div>
-
-            <div id="twinks_rules" class="rules_box">
-                <div class="rules">
-                    <div class="rule" id="5.1">
-                        <a href="#5.1" class="rule_number center">5.1</a>
-                        <div class="rule_text">
-                            Можно иметь всего 1 аккаунт - 100-140 мостиков<br>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="rules_container" id="lags">
-            <div class="heading_rules">
-                <a href="#lags" class="rule_number_box center">
-                    <ion-icon name="link-outline" class="rule_link"></ion-icon>
-                    <span class="main_rule_number center">6</span>
-                </a>
-
-                <button class="medium-font heading_rules_text">
-                    Лаги
-                </button>
-            </div>
-
-            <div id="lags_rules" class="rules_box">
-                <div class="rules">
-                    <div class="rule" id="6.1">
-                        <a href="#6.1" class="rule_number center">6.1</a>
-                        <div class="rule_text">
-                            Лаг машины запрещены - 30-140 мостиков
-                        </div>
-                    </div>
-                    Ответственность за ТПС на сервере несут игроки
-                </div>
-            </div>
-        </section>
-
-        <section class="rules_container" id="building">
-            <div class="heading_rules">
-                <a href="#building" class="rule_number_box center">
-                    <ion-icon name="link-outline" class="rule_link"></ion-icon>
-                    <span class="main_rule_number center">7</span>
-                </a>
-
-                <button class="medium-font heading_rules_text">
-                    Строительство
-                </button>
-            </div>
-
-            <div id="building_rules" class="rules_box">
-                <div class="rules">
-                    <div class="rule" id="7.1">
-                        <a href="#7.1" class="rule_number center">
-                            7.1
-                        </a>
-                        <div class="rule_text">
-                            Строительство на чужих территориях должно обговариваться с их создателями - 10-50 мостиков
-                        </div>
-                    </div>
-                    <div class="rule" id="7.2">
-                        <a href="#7.2" class="rule_number center">
-                            7.2
-                        </a>
-                        <div class="rule_text">
-                            Минимальное расстояние между чужими фермами/базами и т.д. - 150 блоков - 10-70 мостиков (в
-                            зависимости от расстояния)
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="rules_container" id="trading">
-            <div class="heading_rules">
-                <a href="#trading" class="rule_number_box center">
-                    <ion-icon name="link-outline" class="rule_link"></ion-icon>
-                    <span class="main_rule_number center">8</span>
-                </a>
-
-                <button class="medium-font heading_rules_text">
-                    Торговля
-                </button>
-            </div>
-
-            <div id="trading_rules" class="rules_box">
-                <div class="rules">
-                    <div class="rule" id="8.1">
-                        <a href="#8.1" class="rule_number center">8.1</a>
-                        <div class="rule_text">
-                            Валюта сервера в городах и торговых зонах только алмазы, за их пределами разрешён бартер -
-                            10-70 мостиков
-                        </div>
-                    </div>
-                    <div class="rule" id="8.2">
-                        <a href="#8.2" class="rule_number center">8.2</a>
-                        <div class="rule_text">
-                            Продажа ресурсов за реальные деньги запрещена - 140 мостиков обеим сторонам
-                        </div>
-                    </div>
-                    <div class="rule" id="8.3">
-                        <a href="#8.3" class="rule_number center">8.3</a>
-                        <div class="rule_text">
-                            Запрещено намеренное создание дефицита и искусственное завышение цен на любые ресурсы.
-                            Не пытайтесь "сломать" экономику сервера - 40-100 мостиков
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="event">
-            <div class="heading_rules">
-                <button class="semibold-font heading_rules_text unic_color">
-                    Как уменьшить число мостиков?
-                </button>
-            </div>
-
-            <div id="event_box" class="rules_box">
-                <div class="rules">
-                    <div class="rule_text">
-                        Вы можете провести собственный ивент и понизить немного мостиков<br>
-                        Кол-во снимаемых мостиков зависит от:
-                        <ol>
-                            <li>Масштабности</li>
-                            <li>Кол-ва участников</li>
-                            <li>Довольны ли участники</li>
-                        </ol>
-                        <span class="underline">
-                        Модерация должна знать об ивенте
-                    </span>
-                        <br><br>
-                        Вы также можете снять мостики по курсу, если у вас меньше 140 мостиков:<br>
-                        <a href="https://www.donationalerts.com/r/kawa11fox">1 мостик = 1 рубль</a><br>
-                        В донате вы должны написать:
-                        <ol>
-                            <li>Дс ник</li>
-                            <li>Майн ник</li>
-                            <li>Запрос о снятии мостиков</li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <p class="red_line">
-            Правила действуют не зависимо от стримов, видео, ролей, каналов гильдий и других факторов
-        </p>
-        <p id="responsibility" class="red_line">
-            Ответственность всегда несёт владелец аккаунта, независимо от того, кто совершал действия над данным
-            аккаунтом
-        </p>
-        <p id="bypass" class="red_line">
-            Любые попытки обхода блокировок категорически запрещены и будут приводить к продлению и
-            изменению их типа на более строгий
-        </p>
-        <p id="report" class="red_line">
-            Если вы заметили, что кто-то нарушает правила, пишите
-            <a href="https://discord.gg/VtXNje8xHq">репорт в дискорд канале</a>
-        </p>
-        <p id="moderators" class="red_line">
-            Модерация и администрация (никнеймы: JustCheburek, KawaiiFox, JustErrorVayk, Melissa21) имеют
-            большие права, чем правила, итоговое решение остаётся за ними
-        </p>
+        <nav class="for-pc">
+            <ol id="on_this_page" class="not_indent">
+                <li>
+                    <h4 class="unic_color">
+                        На этой странице
+                    </h4>
+                </li>
+                <li>
+                    <a href="#general">
+                        Общение
+                    </a>
+                </li>
+                <li>
+                    <a href="#unknown_url">
+                        Сторонние ресурсы
+                    </a>
+                </li>
+                <li>
+                    <a href="#interaction_with_players">
+                        Игровая активность
+                    </a>
+                </li>
+                <li>
+                    <a href="#cheats">
+                        Читы
+                    </a>
+                </li>
+                <li>
+                    <a href="#twinks">
+                        Твинки
+                    </a>
+                </li>
+                <li>
+                    <a href="#lags">
+                        Лаги
+                    </a>
+                </li>
+                <li>
+                    <a href="#building">
+                        Строительство
+                    </a>
+                </li>
+                <li>
+                    <a href="#trading">
+                        Торговля
+                    </a>
+                </li>
+                <li>
+                    <a href="#event">
+                        Уменьшение мостиков
+                    </a>
+                </li>
+            </ol>
+        </nav>
     </div>
 </main>
 
