@@ -235,8 +235,7 @@ h1 {
 
 /* Преимущества */
 #advantages_section {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     padding-top: 100px;
     background: rgb(var(--black-color));
 }
@@ -244,38 +243,32 @@ h1 {
 .advantage {
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 40px 0;
+    justify-content: space-between;
+    width: 1110px;
+    margin: 40px auto;
 }
 
-.advantage_div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.advantage_text {
     font-size: 22px;
     text-align: left;
-    height: 100%;
-    width: 515px;
+    width: auto;
+    margin: 0 auto;
 
     transition: 1200ms opacity, 1000ms transform;
     opacity: 0;
 }
 
-.advantage_div:nth-child(odd) {
+.advantage_text:nth-child(odd) {
     transform: translateX(-100px);
 }
 
-.advantage_div:nth-child(even) {
+.advantage_text:nth-child(even) {
     transform: translateX(100px);
 }
 
-.advantage_div.show {
+.advantage_text.show {
     opacity: 1;
     transform: translateX(0);
-}
-
-.advantage_text {
-    width: 350px;
 }
 
 .advantage_img_box {
@@ -499,8 +492,9 @@ footer {
 
     /* Преимущества сервера */
     .advantage {
-        padding: 50px;
-        gap: 50px;
+        width: 100%;
+        gap: 70px;
+        margin: 120px 0;
     }
 
     .advantage:nth-child(odd) {
@@ -511,47 +505,45 @@ footer {
         flex-direction: column-reverse;
     }
 
-    .advantage_img {
-        width: 100%;
+    .advantage_img_box {
         height: fit-content;
-    }
-
-    .advantage_div {
-        width: max-content;
+        width: 90%;
     }
 
     .advantage_text {
+        width: max-content;
         font-size: 40px;
-        width: 100%;
     }
 
     /* Регистрация */
     #registration_section {
-        margin: 230px 0;
+        margin: 150px 0;
+        height: max-content;
     }
 
     #registration {
-        padding: 50px;
-        height: 550px;
-        width: 90%;
+        padding: 50px 0;
+        height: 700px;
+        width: 100%;
     }
 
     #registration_text {
-        gap: 35px;
+        gap: 70px;
     }
 
     #registration_text h3 {
-        font-size: 100px;
-        line-height: 110px;
+        font-size: 90px;
+        line-height: 100px;
     }
 
     #registration_text p {
-        font-size: 32px;
+        font-size: 40px;
+        line-height: 55px;
     }
 
     /* Не уверены */
     #not_sure_youtube {
-        font-size: 100px;
-        line-height: 110px;
+        font-size: 70px;
+        line-height: 85px;
     }
 }
