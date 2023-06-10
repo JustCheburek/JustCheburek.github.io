@@ -4,11 +4,7 @@
     <option name="SPLITTER_PROPORTION" value="0.18642907" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de710ec4-f719-4bcd-99d1-12ccf52d1801" name="Changes" comment="18">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/index_style.css" afterDir="false" />
-    </list>
+    <list default="true" id="de710ec4-f719-4bcd-99d1-12ccf52d1801" name="Changes" comment="19" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -180,14 +176,7 @@
       <workItem from="1686015783733" duration="2122000" />
       <workItem from="1686043023831" duration="6304000" />
       <workItem from="1686375804485" duration="2003000" />
-      <workItem from="1686378980246" duration="1309000" />
-    </task>
-    <task id="LOCAL-00188" summary="12.2 writing.js">
-      <created>1682421394615</created>
-      <option name="number" value="00188" />
-      <option name="presentableId" value="LOCAL-00188" />
-      <option name="project" value="LOCAL" />
-      <updated>1682421394615</updated>
+      <workItem from="1686378980246" duration="1668000" />
     </task>
     <task id="LOCAL-00189" summary="12.3">
       <created>1682423745221</created>
@@ -525,7 +514,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686049131309</updated>
     </task>
-    <option name="localTasksCounter" value="237" />
+    <task id="LOCAL-00237" summary="19">
+      <created>1686380585030</created>
+      <option name="number" value="00237" />
+      <option name="presentableId" value="LOCAL-00237" />
+      <option name="project" value="LOCAL" />
+      <updated>1686380585031</updated>
+    </task>
+    <option name="localTasksCounter" value="238" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -544,7 +540,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="13.6" />
     <MESSAGE value="13.7" />
     <MESSAGE value="13.71" />
     <MESSAGE value="13.72" />
@@ -569,6 +564,7 @@
     <MESSAGE value="17.8" />
     <MESSAGE value="17.9" />
     <MESSAGE value="18" />
-    <option name="LAST_COMMIT_MESSAGE" value="18" />
+    <MESSAGE value="19" />
+    <option name="LAST_COMMIT_MESSAGE" value="19" />
   </component>
 </project>
