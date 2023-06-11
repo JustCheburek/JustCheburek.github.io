@@ -26,6 +26,11 @@ main {
 }
 
 /* Разделы правил */
+#subsections_container, #on_this_page_container {
+    display: flex;
+    justify-content: center;
+}
+
 #subsections, #on_this_page {
     position: fixed;
     height: fit-content;
@@ -45,7 +50,7 @@ main {
     border-radius: 20px;
 }
 
-#subsections li:hover, #on_this_page li:hover {
+#subsections li:hover, #on_this_page li:has(a):hover {
     background: rgba(var(--black-color), 0.34);
 }
 
@@ -60,7 +65,7 @@ h1 {
 }
 
 #info_mostiki {
-    margin: 45px 0 25px 0;
+    margin: 50px 0 25px 0;
 }
 
 /* нижний текст */
@@ -115,6 +120,7 @@ h1 {
 .rules {
     padding-left: 5px;
     line-height: 25px;
+    min-height: 0;  /* Нельзя убирать */
     transition: visibility 1000ms;
     visibility: hidden;
 }
@@ -204,8 +210,8 @@ h1 {
 }
 
 /* Модификации */
-.modifications {
-    width: 550px;
+.list_container {
+    margin-top: 25px;
 }
 
 .list_text {
@@ -213,7 +219,6 @@ h1 {
     top: 105px;
     backdrop-filter: blur(2px);
     background: rgba(var(--background-color), 0.8);
-    margin-top: 25px;
     padding: 25px 0;
 }
 
@@ -240,7 +245,7 @@ h1 {
 @media (min-width: 1201px) {
     #max_size {
         display: grid;
-        grid-template-columns: 1fr 700px 1fr;
+        grid-template-columns: 1fr 750px 1fr;
         gap: 20px;
     }
 }
@@ -255,8 +260,8 @@ h1 {
 
     #subsections {
         position: static;
-        margin: 35px 0;
         display: flex;
+        margin: 35px 0;
         font-size: 40px;
     }
 
@@ -337,10 +342,5 @@ h1 {
     /* Ивенты */
     #event summary {
         font-size: 35px;
-    }
-
-    /* Модификации */
-    .modifications {
-        width: 1150px;
     }
 }
