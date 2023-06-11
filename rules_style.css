@@ -239,7 +239,7 @@ h1 {
 .blacklist {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
 }
 
 #banned_words {
@@ -250,18 +250,19 @@ h1 {
     min-height: 100px;
 }
 
-.text_button {
+#show_words_button {
     width: 450px;
     height: 60px;
     padding: 0;
     background: rgba(var(--black-color), 0.4);
+    margin: 0 auto;
 }
 
-.text_button:hover {
+#show_words_button:hover {
     padding: 0;
 }
 
-.text_button:active {
+#show_words_button:active {
     background: rgba(var(--black-color), 0.6);
 }
 
@@ -296,6 +297,10 @@ h1 {
     opacity: 1;
 }
 
+.blacklist .list li {
+    margin-bottom: 20px;
+}
+
 @media (min-width: 1201px) {
     #max_size {
         display: grid;
@@ -309,7 +314,7 @@ h1 {
     #max_size {
         display: grid;
         grid-template-rows: 150px 1fr;
-        width: 90%;
+        width: 87%;
     }
 
     #subsections {
@@ -334,7 +339,7 @@ h1 {
         line-height: 100px;
     }
 
-    h2 {
+    h2, #show_words_button {
         font-size: 80px;
         line-height: 90px;
     }
@@ -394,5 +399,27 @@ h1 {
     /* Ивенты */
     #event summary {
         font-size: 35px;
+    }
+
+    /* Запрещённые выражения */
+    .blacklist {
+        gap: 100px;
+    }
+
+    #banned_words {
+        margin: 0;
+    }
+
+    #show_words_button {
+        width: 90%;
+        height: 250px;
+    }
+
+    .hide_words_container {
+        height: 150px;
+    }
+
+    .blacklist .list li {
+        margin-bottom: 60px;
     }
 }
