@@ -370,7 +370,7 @@ footer {
 }
 
 /* Адаптивность */
-@media (max-width: 1300px) {
+@media (max-width: 1200px) {
     /* Серверная информация для входа */
     #info_section {
         margin: 0;

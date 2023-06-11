@@ -503,21 +503,6 @@
 <!-- Иконки -->
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-<script lang="JavaScript">
-    const All_Details = document.querySelectorAll('details');
-
-    All_Details.forEach(deet => {
-        deet.addEventListener('toggle', toggleOpenOneOnly)
-    })
-
-    function toggleOpenOneOnly(e) {
-        if (this.open) {
-            All_Details.forEach(deet => {
-                if (deet !== this && deet.open) deet.open = false
-            });
-        }
-    }
-</script>
 
 <!-- Бургер меню -->
 <script src="burger_menu.js"></script>

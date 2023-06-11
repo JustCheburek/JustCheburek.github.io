@@ -4,10 +4,15 @@
     <option name="SPLITTER_PROPORTION" value="0.18642907" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de710ec4-f719-4bcd-99d1-12ccf52d1801" name="Changes" comment="20.2">
-      <change afterPath="$PROJECT_DIR$/show_words_button.js" afterDir="false" />
+    <list default="true" id="de710ec4-f719-4bcd-99d1-12ccf52d1801" name="Changes" comment="20.3">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blacklist.html" beforeDir="false" afterPath="$PROJECT_DIR$/blacklist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/index_style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mods.html" beforeDir="false" afterPath="$PROJECT_DIR$/mods.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rules_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/rules_style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/show_words_button.js" beforeDir="false" afterPath="$PROJECT_DIR$/show_words_button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,14 +49,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Artem/javascript/MineBridge",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Artem/javascript/MineBridge&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="JavaScript Debug.shop.html">
     <configuration name="plugins.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/style.css/plugins.html" useBuiltInWebServerPort="true">
       <method v="2" />
@@ -182,14 +187,8 @@
       <workItem from="1686043023831" duration="6304000" />
       <workItem from="1686375804485" duration="2003000" />
       <workItem from="1686378980246" duration="15302000" />
-      <workItem from="1686444776818" duration="6795000" />
-    </task>
-    <task id="LOCAL-00193" summary="12.6">
-      <created>1682678259689</created>
-      <option name="number" value="00193" />
-      <option name="presentableId" value="LOCAL-00193" />
-      <option name="project" value="LOCAL" />
-      <updated>1682678259689</updated>
+      <workItem from="1686444776818" duration="9491000" />
+      <workItem from="1686479766010" duration="3549000" />
     </task>
     <task id="LOCAL-00194" summary="12.61">
       <created>1682759309232</created>
@@ -527,7 +526,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686451198227</updated>
     </task>
-    <option name="localTasksCounter" value="242" />
+    <task id="LOCAL-00242" summary="20.3">
+      <created>1686451723144</created>
+      <option name="number" value="00242" />
+      <option name="presentableId" value="LOCAL-00242" />
+      <option name="project" value="LOCAL" />
+      <updated>1686451723144</updated>
+    </task>
+    <option name="localTasksCounter" value="243" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -546,7 +552,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="13.8" />
     <MESSAGE value="13.81" />
     <MESSAGE value="13.82" />
     <MESSAGE value="13.9" />
@@ -571,6 +576,7 @@
     <MESSAGE value="20" />
     <MESSAGE value="20.1" />
     <MESSAGE value="20.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="20.2" />
+    <MESSAGE value="20.3" />
+    <option name="LAST_COMMIT_MESSAGE" value="20.3" />
   </component>
 </project>
