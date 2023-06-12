@@ -387,7 +387,7 @@ h1 {
     }
 
     .heading_rules:hover .rule_link {
-        transform: translateX(15px) rotate(145deg);
+        transform: translateX(15px) rotate(145deg) scale(125%);
     }
 
     .rule_number {
@@ -395,7 +395,6 @@ h1 {
         height: 100%;
         margin-right: 87px;
         margin-left: 3px;
-        font-weight: 500;
     }
 
     .heading_rules:hover .main_rule_number {
@@ -403,7 +402,7 @@ h1 {
     }
 
     .rule:hover .rule_number {
-        transform: scale(150%) translate(8px, 6px);
+        transform: scale(140%) translateX(8px);
     }
 
     /* Ивенты */
