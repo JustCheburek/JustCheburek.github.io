@@ -4,9 +4,9 @@
     <option name="SPLITTER_PROPORTION" value="0.18642907" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de710ec4-f719-4bcd-99d1-12ccf52d1801" name="Changes" comment="21">
+    <list default="true" id="de710ec4-f719-4bcd-99d1-12ccf52d1801" name="Changes" comment="21.2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blacklist.html" beforeDir="false" afterPath="$PROJECT_DIR$/blacklist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rules.html" beforeDir="false" afterPath="$PROJECT_DIR$/rules.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rules_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/rules_style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,14 +44,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Artem/javascript/MineBridge&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Artem/javascript/MineBridge",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="JavaScript Debug.shop.html">
     <configuration name="plugins.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/style.css/plugins.html" useBuiltInWebServerPort="true">
       <method v="2" />
@@ -183,21 +184,7 @@
       <workItem from="1686375804485" duration="2003000" />
       <workItem from="1686378980246" duration="15302000" />
       <workItem from="1686444776818" duration="9491000" />
-      <workItem from="1686479766010" duration="4247000" />
-    </task>
-    <task id="LOCAL-00195" summary="12.61">
-      <created>1682759499052</created>
-      <option name="number" value="00195" />
-      <option name="presentableId" value="LOCAL-00195" />
-      <option name="project" value="LOCAL" />
-      <updated>1682759499052</updated>
-    </task>
-    <task id="LOCAL-00196" summary="12.7">
-      <created>1682928035238</created>
-      <option name="number" value="00196" />
-      <option name="presentableId" value="LOCAL-00196" />
-      <option name="project" value="LOCAL" />
-      <updated>1682928035239</updated>
+      <workItem from="1686479766010" duration="9386000" />
     </task>
     <task id="LOCAL-00197" summary="12.8">
       <created>1682936540281</created>
@@ -528,7 +515,21 @@
       <option name="project" value="LOCAL" />
       <updated>1686483345727</updated>
     </task>
-    <option name="localTasksCounter" value="244" />
+    <task id="LOCAL-00244" summary="21.1">
+      <created>1686484083604</created>
+      <option name="number" value="00244" />
+      <option name="presentableId" value="LOCAL-00244" />
+      <option name="project" value="LOCAL" />
+      <updated>1686484083604</updated>
+    </task>
+    <task id="LOCAL-00245" summary="21.2">
+      <created>1686484164116</created>
+      <option name="number" value="00245" />
+      <option name="presentableId" value="LOCAL-00245" />
+      <option name="project" value="LOCAL" />
+      <updated>1686484164116</updated>
+    </task>
+    <option name="localTasksCounter" value="246" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -547,8 +548,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="13.82" />
-    <MESSAGE value="13.9" />
     <MESSAGE value="13.91" />
     <MESSAGE value="13.92" />
     <MESSAGE value="14" />
@@ -572,6 +571,8 @@
     <MESSAGE value="20.2" />
     <MESSAGE value="20.3" />
     <MESSAGE value="21" />
-    <option name="LAST_COMMIT_MESSAGE" value="21" />
+    <MESSAGE value="21.1" />
+    <MESSAGE value="21.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="21.2" />
   </component>
 </project>
