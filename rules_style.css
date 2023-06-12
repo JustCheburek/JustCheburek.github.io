@@ -132,9 +132,9 @@ h1 {
     align-items: flex-start;
 
     /* Размеры */
-    width: 25px;
-    height: 25px;
-    margin-right: 17px;
+    width: 20px;
+    height: 100%;
+    margin-right: 22px;
 
     cursor: pointer; /* Изменение мышки на курсор */
 }
@@ -142,7 +142,6 @@ h1 {
 .rule:hover .rule_number {
     /* Замена цифры на ссылку */
     color: transparent;
-    transform: scale(80%);
     background: url("media/link.svg") center no-repeat;
     background-size: contain;
 }
