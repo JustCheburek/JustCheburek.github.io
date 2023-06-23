@@ -216,11 +216,6 @@ h1 {
     color: rgba(var(--white-color), 0.25)
 }
 
-.modifications .list {
-    font-size: 24px;
-    line-height: 36px;
-}
-
 #mods_list, #rp_list {
     font-weight: 500;
 }
@@ -270,12 +265,13 @@ h1 {
     opacity: 0;
     width: 100%;
     height: max-content;
+    font-size: 16px;
 
     transition: 300ms opacity, 500ms left;
 }
 
 .hide_stars {
-    letter-spacing: 0.8px;
+    letter-spacing: 0.5px;
     left: 12%;
     top: 3px;
     transform: translateX(2px);
