@@ -449,14 +449,14 @@ footer {
     }
 
     .advantage_text {
-        width: max-content;
+        width: fit-content;
         font-size: 40px;
     }
 
     /* Регистрация */
     #registration_section {
         margin: 150px 0;
-        height: max-content;
+        height: fit-content;
     }
 
     #registration {

@@ -91,7 +91,7 @@ h1 {
 
 .heading_rules, #event summary {
     font-size: 19px;
-    width: max-content;
+    width: fit-content;
     margin-bottom: 17px; /* Расстояние между главным текстом и открывающимся текстом */
 }
 
@@ -304,8 +304,7 @@ h1 {
     #max_size {
         display: grid;
         grid-template-rows: 150px 1fr;
-        width: 100%;
-        padding: 0 40px;
+        padding: 0 50px;
     }
 
     #subsections {
@@ -345,9 +344,14 @@ h1 {
         line-height: 75px;
     }
 
-    p, #event, .list li, .rule_text {
+    p, #event, .rule_text, ul {
         font-size: 54px;
         line-height: 75px;
+    }
+
+    .hide_stars, .hide_words {
+        font-size: 48px;
+        line-height: 60px;
     }
 
     /* Отступы списков */

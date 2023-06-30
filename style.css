@@ -87,6 +87,10 @@ body * {
     margin: 0;
 }
 
+#max_size {
+    width: 100%;
+}
+
 img {
     object-fit: contain;
 }
@@ -224,7 +228,7 @@ header nav {
     justify-content: space-between;
     flex-direction: row;
     min-width: 82%;
-    max-width: max-content;
+    max-width: fit-content;
 }
 
 /* Основная навигация */

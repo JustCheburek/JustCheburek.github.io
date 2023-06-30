@@ -9,6 +9,7 @@ main {
 
 /* Максимальная величина страницы */
 #max_size {
+    /* Расположение */
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -91,7 +92,7 @@ main {
 .img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     transition: 500ms transform;
 }
 
@@ -126,7 +127,7 @@ main {
 
 /* Адаптивность */
 @media (max-width: 1200px) {
-    #max_size *:not(.line):not(.line_text) {
+    .container, .container:hover, .img_box {
         border: none;
         box-shadow: none;
         border-radius: 0;
