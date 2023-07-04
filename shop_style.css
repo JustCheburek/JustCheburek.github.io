@@ -1,15 +1,15 @@
 :root {
-    --roll-time: 13s;
-    --roll-width: -10200px;
+    --roll-time: 20s;
+    --roll-width: -15600px;
 }
 
 #max_size {
-    position: relative;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 #visual_container_items {
+    position: relative;
     display: flex;
     align-items: center;
 
@@ -17,7 +17,20 @@
     border-radius: 25px;
 
     height: 350px;
-    margin: 20px 200px;
+    width: 800px;
+    margin: 20px auto;
+}
+
+#visual_container_items:before {
+    /* Линия */
+    position: absolute;
+    content: " ";
+    background: rgba(var(--unic-color), 0.5);
+    width: 2px;
+    height: 380px;
+    left: 400px;
+    top: -15px;
+    z-index: 1000;
 }
 
 #natural_container_items {
@@ -40,17 +53,6 @@
     100% {
         transform: translateX(var(--roll-width));
     }
-}
-
-#line {
-    position: absolute;
-    content: " ";
-    background: rgba(var(--unic-color), 0.5);
-    width: 2px;
-    height: 380px;
-    left: 600px;
-    top: -15px;
-    z-index: 1000;
 }
 
 .item_img {

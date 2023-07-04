@@ -7,10 +7,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de710ec4-f719-4bcd-99d1-12ccf52d1801" name="Changes" comment="23.3">
+    <list default="true" id="de710ec4-f719-4bcd-99d1-12ccf52d1801" name="Changes" comment="23.4">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/case.html" beforeDir="false" afterPath="$PROJECT_DIR$/case.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cases.js" beforeDir="false" afterPath="$PROJECT_DIR$/cases.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shop_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/shop_style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,20 +49,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Artem/javascript/test/Simple-CSGO-case-simulator-master/source&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Artem/javascript/test/Simple-CSGO-case-simulator-master/source",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="JavaScript Debug.shop.html">
     <configuration name="plugins.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/style.css/plugins.html" useBuiltInWebServerPort="true">
       <method v="2" />
@@ -197,7 +199,8 @@
       <workItem from="1687484717013" duration="7099000" />
       <workItem from="1688030871312" duration="441000" />
       <workItem from="1688087213395" duration="9186000" />
-      <workItem from="1688376163409" duration="18296000" />
+      <workItem from="1688376163409" duration="19567000" />
+      <workItem from="1688460386001" duration="1891000" />
     </task>
     <task id="LOCAL-00202" summary="13.1">
       <created>1683531409421</created>
@@ -542,7 +545,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687491790668</updated>
     </task>
-    <option name="localTasksCounter" value="255" />
+    <option name="localTasksCounter" value="256" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -561,7 +564,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="17.4" />
     <MESSAGE value="17.5" />
     <MESSAGE value="17.6" />
     <MESSAGE value="17.7" />
@@ -586,6 +588,7 @@
     <MESSAGE value="23.1" />
     <MESSAGE value="23.2" />
     <MESSAGE value="23.3" />
-    <option name="LAST_COMMIT_MESSAGE" value="23.3" />
+    <MESSAGE value="23.4" />
+    <option name="LAST_COMMIT_MESSAGE" value="23.4" />
   </component>
 </project>
