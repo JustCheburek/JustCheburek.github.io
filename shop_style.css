@@ -1,0 +1,32 @@
+#max_size {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#container_items {
+    display: flex;
+    overflow-x: hidden;
+    flex-direction: row;
+    border: solid rgba(var(--unic-color), 0.5) 1px;
+    border-radius: 25px;
+
+    height: 350px;
+    margin: 20px 200px;
+}
+
+#line {
+    position: absolute;
+    content: " ";
+    background: rgba(var(--unic-color), 0.5);
+    width: 2px;
+    height: 380px;
+    left: 600px;
+    top: 50px;
+}
+
+.item_img {
+    width: 500px;
+    margin: 20px 70px;
+    border-radius: 25%;
+}

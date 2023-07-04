@@ -45,16 +45,29 @@
 
 /* Переменные */
 :root {
+    /* Цвета */
     --unic-color: 0, 173, 181;
-    /*
-    50, 160, 50 зелёный
-    147, 112, 219 фиолетовый
-    0, 173, 181 голубой
-    248, 0, 0 красный
-    */
     --white-color: 255, 255, 255;
     --background-color: 22, 28, 31;
     --black-color: 2, 2, 2;
+
+    /* Шрифты */
+    --h2-size: 1.5em;
+    --h2-line-height: 1.5em;
+
+    --p-size: 18px;
+    --p-line-height: 33px;
+}
+
+@media (max-width: 1200px) {
+    :root {
+        /* Шрифты с мобилы */
+        --h2-size: 75px;
+        --h2-line-height: 85px;
+
+        --p-size: 54px;
+        --p-line-height: 75px;
+    }
 }
 
 /*
@@ -70,21 +83,14 @@ a {
 */
 html {
     scroll-behavior: smooth;
-    scroll-padding: 108px;    /* размер шапки */
+    scroll-padding: 108px; /* размер шапки */
 }
 
 body {
-    margin: 0;
-    padding: 0;
     font-family: 'Montserrat', sans-serif;
     background: rgb(var(--background-color));
-    font-weight: 400;
     color: rgb(var(--white-color));
-}
-
-body * {
-    padding: 0;
-    margin: 0;
+    font-weight: 400;
 }
 
 #max_size {
@@ -144,8 +150,12 @@ ol:not(.not_indent), ul:not(.not_indent) {
 }
 
 /* Нажатие */
-a.unic_color:active, button.unic_color:active, summary.unic_color:active, #indicator:active {
+a.unic_color:active, button.unic_color:active, #indicator:active {
     color: rgba(var(--unic-color), 0.8);
+}
+
+button {
+    cursor: pointer;
 }
 
 /* Убрать возможность выделения текста */
@@ -155,8 +165,9 @@ a.unic_color:active, button.unic_color:active, summary.unic_color:active, #indic
     -khtml-user-select: none; /* Konqueror HTML */
     -moz-user-select: none; /* Old versions of Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
+    user-select: none;
+    /* Non-prefixed version, currently
+                                     supported by Chrome, Edge, Opera and Firefox */
 }
 
 /* Убирание маркера */
@@ -168,21 +179,27 @@ a.unic_color:active, button.unic_color:active, summary.unic_color:active, #indic
 /* Firefox */
 * {
     scrollbar-width: thin;
-    scrollbar-color: blue orange;
+    scrollbar-color: rgb(var(--unic-color)) rgb(var(--background-color));
 }
 
 /* для Chrome/Edge/Safari */
 *::-webkit-scrollbar {
-    height: 12px;
-    width: 12px;
+    height: 8px;
+    width: 8px;
 }
+
 *::-webkit-scrollbar-track {
     background: rgb(var(--background-color));
 }
+
 *::-webkit-scrollbar-thumb {
-    background-color: rgb(var(--unic-color));
+    background: rgb(var(--unic-color));
     border-radius: 25px;
-    border: 4px solid rgb(var(--background-color));
+}
+
+/* Шрифты */
+h1 {
+    line-height: 45px;
 }
 
 /*
@@ -357,21 +374,21 @@ header .urls {
     transition: 300ms fill;
 }
 
- .tg:hover path {
-     fill: #229ED9;
- }
+.tg:hover path {
+    fill: #229ED9;
+}
 
- .ds:hover path {
+.ds:hover path {
     fill: #5865F2;
- }
+}
 
- .vk:hover path {
-     fill: #0077FF;
- }
+.vk:hover path {
+    fill: #0077FF;
+}
 
- .boosty:hover path {
-     fill: #F15F2C;
- }
+.boosty:hover path {
+    fill: #F15F2C;
+}
 
 /* Иконка */
 .burger_icon {
@@ -479,7 +496,13 @@ footer > span {
 
     /* Весь сайт */
     html {
-        scroll-padding: 130px;  /* размер шапки */
+        scroll-padding: 130px; /* размер шапки */
+    }
+
+    /* Шрифты */
+    h1 {
+        font-size: 85px;
+        line-height: 95px;
     }
 
     /* Подвал */

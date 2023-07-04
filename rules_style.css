@@ -1,11 +1,7 @@
 /* Весь сайт */
 body {
-    font-size: 18px;
-    line-height: 33px;
-}
-
-summary, button {
-    cursor: pointer;
+    font-size: var(--p-size);
+    line-height: var(--p-line-height);
 }
 
 /* Главная часть */
@@ -51,10 +47,6 @@ main {
 }
 
 /* верхний текст */
-h1 {
-    line-height: 45px;
-}
-
 #info_mostiki {
     margin: 50px 0 25px 0;
 }
@@ -110,7 +102,6 @@ h1 {
 /* Правила */
 .rules {
     padding-left: 5px;
-    line-height: 25px;
     min-height: 0;  /* Нельзя убирать */
     transition: visibility 1000ms;
     visibility: hidden;
@@ -324,9 +315,9 @@ h1 {
     }
 
     /* Шрифты */
-    h1 {
-        font-size: 85px;
-        line-height: 95px;
+    body {
+        font-size: var(--p-size);
+        line-height: var(--p-line-height);
     }
 
     h2, #show_words_button, .main_rule_number {
@@ -334,24 +325,14 @@ h1 {
         line-height: 85px;
     }
 
-    h5 {
-        font-size: 30px;
-        line-height: 40px;
-    }
-
     .heading_rules_text {
         font-size: 60px;
         line-height: 75px;
     }
 
-    p, #event, .rule_text, ul {
-        font-size: 54px;
-        line-height: 75px;
-    }
-
     .hide_stars, .hide_words {
-        font-size: 48px;
-        line-height: 60px;
+        font-size: calc(var(--p-size) - 6);
+        line-height: calc(var(--p-line-height) - 15);
     }
 
     /* Отступы списков */
@@ -409,11 +390,6 @@ h1 {
 
     .rule:hover .rule_number {
         transform: scale(110%) translateX(8px);
-    }
-
-    /* Ивенты */
-    #event summary {
-        font-size: 35px;
     }
 
     /* Запрещённые выражения */
