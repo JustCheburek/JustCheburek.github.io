@@ -21,13 +21,39 @@ function get_random_item(array, all_chances) {
     return array[id].name
 }
 
-function change_case() {
-    // Изменение текущего кейса
-    let case_name = document.querySelector("#case_select").value
-    case_type = case_types[case_name]
+function update() {
+    // Смена редкости предмета
+    for (let child of container_items.children) {
+        // Тип предмета
+        child.innerText = get_random_item(case_type, all_chances_case)
+
+        // Удаляем редкости
+        for (let rarity_id = 0; rarity_id < rarity_type.length; rarity_id++) {
+            if (child.classList.contains(rarity_type[rarity_id].name)) {
+                child.classList.remove(rarity_type[rarity_id].name)
+            }
+        }
+
+        // Выдаём редкость
+        child.classList.add(get_random_item(rarity_type, all_chances_rarities))
+    }
+}
+
+function change_type() {
+    // Изменение кейса
+    let name = document.querySelector("#case_select").value
+    case_type = case_types[name]
 
     // Сумма шансов всех типов
     all_chances_case = get_all_chances(case_type)
+
+    // Изменение редкости
+    rarity_type = rarities_types[name]
+
+    // Сумма шансов всех редкостей
+    all_chances_rarities = get_all_chances(rarity_type)
+
+    update()
 }
 
 /*function get_result_item() {
@@ -47,10 +73,10 @@ const container_items = document.querySelector("#natural_container_items")
 const roll = document.querySelector("#roll")
 
 // Получение root
-const root = document.querySelector(":root")
+// const root = document.querySelector(":root")
 
-// Редкости
-const rarities = [
+// Редкости в обычном сундуке
+const common_rarities = [
     {
         name: "common",
         chance: 10
@@ -77,8 +103,68 @@ const rarities = [
     }
 ]
 
-// Сумма шансов редкостей
-const all_chances_rarities = get_all_chances(rarities)
+// Редкости в редком сундуке
+const rare_rarities = [
+    {
+        name: "common",
+        chance: 7
+    },
+    {
+        name: "uncommon",
+        chance: 6
+    },
+    {
+        name: "rare",
+        chance: 7
+    },
+    {
+        name: "epic",
+        chance: 4
+    },
+    {
+        name: "mythic",
+        chance: 3
+    },
+    {
+        name: "legendary",
+        chance: 2
+    }
+]
+
+// Редкости в легендарном сундуке
+const legendary_rarities = [
+    {
+        name: "common",
+        chance: 5
+    },
+    {
+        name: "uncommon",
+        chance: 5
+    },
+    {
+        name: "rare",
+        chance: 5
+    },
+    {
+        name: "epic",
+        chance: 6
+    },
+    {
+        name: "mythic",
+        chance: 5
+    },
+    {
+        name: "legendary",
+        chance: 3
+    }
+]
+
+const rarities_types = {
+    "common": common_rarities,
+    "rare": rare_rarities,
+    "legendary": legendary_rarities
+}
+let rarity_type = common_rarities
 
 // Кейсы
 // Обычный кейс
@@ -172,16 +258,13 @@ const case_types = {
 }
 let case_type = common_case
 
+// Суммы шансов
+let all_chances_rarities = get_all_chances(rarity_type)
+
 // Сумма шансов всех типов
 let all_chances_case = get_all_chances(case_type)
 
-for (let child of container_items.children) {
-    // Тип предмета
-    child.innerText = get_random_item(case_type, all_chances_case)
-
-    // Редкость предмета
-    child.classList.add(get_random_item(rarities, all_chances_rarities))
-}
+update()
 
 // Загрузка окна
 window.addEventListener("load", function () {
@@ -192,21 +275,7 @@ window.addEventListener("load", function () {
             // Меняем текст кнопки
             roll.innerText = "Крутить"
 
-            // Смена редкости предмета
-            for (let child of container_items.children) {
-                // Тип предмета
-                child.innerText = get_random_item(case_type, all_chances_case)
-
-                // Удаляем редкости
-                for (let rarity_id = 0; rarity_id < rarities.length; rarity_id++) {
-                    if (child.classList.contains(rarities[rarity_id].name)) {
-                        child.classList.remove(rarities[rarity_id].name)
-                    }
-                }
-
-                // Выдаём редкость
-                child.classList.add(get_random_item(rarities, all_chances_rarities))
-            }
+            update()
         }
 
         else {
