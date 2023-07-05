@@ -1,28 +1,92 @@
 :root {
+    /* Кручение */
     --roll-time: 20s;
-    --roll-width: -15600px;
+    --roll-width: -15660px;
+
+    /* Цвета */
+    --common-color: 170, 170, 170;
+    --uncommon-color: 0, 128, 0;
+    --rare-color: 70, 70, 225;
+    --epic-color: 186, 85, 211;
+    --mythic-color: 139, 0, 255;
+    --legendary-color: 255, 215, 0;
 }
 
 #max_size {
     max-width: 1200px;
     margin: 0 auto;
+    font-weight: 500;
 }
 
+#main_container {
+    display: grid;
+    grid-template-columns: 1fr 800px 1fr;
+    gap: 50px;
+}
+
+/* Визуальный контейнер */
 #visual_container_items {
+    /* Расположение */
     position: relative;
+
     display: flex;
     align-items: center;
+    gap: 50px;
 
-    border: solid rgba(var(--unic-color), 0.5) 1px;
-    border-radius: 25px;
-
+    /* Размеры */
     height: 350px;
     width: 800px;
     margin: 20px auto;
+
+    /* Границы */
+    border: solid rgba(var(--unic-color), 0.5) 1px;
+    border-radius: 25px;
+
+    overflow: hidden;
 }
 
+/* Информация о редкостях */
+#info_case {
+    /* Расположение */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Выбор кейса */
+#case_select_container {
+    /* Расположение */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+
+    /* Размеры */
+    height: 100%;
+}
+
+#case_select {
+    background: rgb(var(--background-color));
+    border: solid 1px rgb(var(--unic-color));
+    border-radius: 10px;
+    padding: 5px 10px;
+    outline: none;
+    color: white;
+}
+
+#case_select * {
+    font-weight: 500;
+}
+
+#case_select *:hover {
+    background: rgb(var(--background-color));
+}
+
+/* Линия */
 #visual_container_items:before {
-    /* Линия */
     position: absolute;
     content: " ";
     background: rgba(var(--unic-color), 0.5);
@@ -30,45 +94,156 @@
     height: 380px;
     left: 400px;
     top: -15px;
-    z-index: 1000;
+    z-index: 10;
 }
 
+/* Реальный контейнер */
 #natural_container_items {
+    /* Расположение */
+    position: absolute;
+
     display: flex;
-    overflow-x: hidden;
     flex-direction: row;
-    height: fit-content;
 }
 
-#natural_container_items.roll * {
+/* Кручение */
+#natural_container_items.roll {
     animation: roll var(--roll-time) forwards;
-    /*animation-timing-function: ease;*/
-    animation-timing-function: cubic-bezier(0.1, 0.05, 0.35, 1.0)
 }
 
-@keyframes roll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(var(--roll-width));
-    }
+/* Предмет */
+.item {
+    /* Расположение */
+    margin: 0 20px;
+
+    /* Размеры */
+    width: 300px;
+    height: 200px;
+
+    /* Отображение */
+    border-radius: 25px;
+}
+
+div.item {
+    /* Расположение */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .item_img {
-    width: 500px;
-    margin: 0 20px;
-    border-radius: 25%;
+    /* Размеры */
+    width: 100%;
+    height: 100%;
+
+    /* Отображение */
+    border-radius: 25px;
 }
 
-.item_img:first-child {
-    margin-left: 150px;
+/* Редкости */
+div.common {
+    box-shadow: 0 0 10px rgba(var(--common-color), 0.9);
 }
 
+.common {
+    color: rgb(var(--common-color));
+    text-shadow: 0 0 10px rgba(var(--common-color), 0.9);
+}
+
+div.uncommon {
+    box-shadow: 0 0 20px rgba(var(--uncommon-color), 0.6);
+}
+
+.uncommon {
+    color: rgb(var(--uncommon-color));
+    text-shadow: 0 0 20px rgba(var(--uncommon-color), 0.6);
+}
+
+div.rare {
+    box-shadow: 0 0 20px rgba(var(--rare-color), 0.4);
+}
+
+.rare {
+    color: rgb(var(--rare-color));
+    text-shadow: 0 0 20px rgba(var(--rare-color), 0.4);
+}
+
+div.epic {
+    box-shadow: 0 0 20px rgba(var(--epic-color), 0.9);
+}
+
+.epic {
+    color: rgb(var(--epic-color));
+    text-shadow: 0 0 20px rgba(var(--epic-color), 0.9);
+}
+
+div.mythic {
+    box-shadow: 0 0 25px rgba(var(--mythic-color), 0.9);
+}
+
+.mythic {
+    color: rgb(var(--mythic-color));
+    text-shadow: 0 0 25px rgba(var(--mythic-color), 0.9);
+}
+
+div.legendary {
+    box-shadow: 0 0 30px rgb(var(--legendary-color));
+}
+
+.legendary {
+    color: rgb(var(--legendary-color));
+    text-shadow: 0 0 30px rgb(var(--legendary-color));
+}
+
+/* Анимация после прокрутки */
+#natural_container_items.roll .result_item {
+    animation: show_up 1s var(--roll-time) forwards;
+}
+
+#natural_container_items.roll *:not(.result_item) {
+    animation: disappear 1s var(--roll-time) forwards;
+}
+
+/* Кнопка */
 .dynamic_text_button {
     min-height: 110px;
 }
 
+/* Подвал */
 footer {
     height: 100px;
+}
+
+/* Анимации */
+@keyframes roll {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: var(--roll-width);
+    }
+}
+
+@keyframes show_up {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.15);
+    }
+}
+
+@keyframes disappear {
+    0% {
+        opacity: 1;
+        filter: blur(0);
+        transform: scale(1);
+    }
+    30% {
+        filter: blur(10px);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
 }
