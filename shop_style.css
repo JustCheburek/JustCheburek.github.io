@@ -1,15 +1,15 @@
 :root {
     /* Кручение */
-    --roll-time: 20s;
+    --roll-time: 25s;
     --roll-width: -15750px;
 
     /* Цвета */
-    --common-color: 170, 170, 170;
-    --uncommon-color: 0, 128, 0;
-    --rare-color: 70, 70, 225;
-    --epic-color: 186, 85, 211;
-    --mythic-color: 139, 0, 255;
-    --legendary-color: 255, 215, 0;
+    --common-color: 170, 170, 170; /* Обычный */
+    --uncommon-color: 0, 128, 0; /* Необычный */
+    --rare-color: 105, 105, 225; /* Редкий */
+    --epic-color: 186, 85, 211; /* Эпический */
+    --mythic-color: 139, 0, 255; /* Мифический */
+    --legendary-color: 255, 215, 0; /* Легендарный */
 }
 
 #max_size {
@@ -121,7 +121,7 @@
     height: 200px;
 
     /* Отображение */
-    border-radius: 25px;
+    border-radius: 10px;
 }
 
 div.item {
@@ -137,21 +137,23 @@ div.item {
     height: 100%;
 
     /* Отображение */
-    border-radius: 25px;
+    border-radius: 10px;
 }
 
 /* Редкости */
 div.common {
     box-shadow: 0 0 10px rgba(var(--common-color), 0.9);
+    border: solid 1px rgb(var(--common-color));
 }
 
 .common {
     color: rgb(var(--common-color));
-    text-shadow: 0 0 10px rgba(var(--common-color), 0.9);
+    text-shadow: 0 0 15px rgba(var(--common-color), 0.9);
 }
 
 div.uncommon {
     box-shadow: 0 0 20px rgba(var(--uncommon-color), 0.6);
+    border: solid 1px rgb(var(--uncommon-color));
 }
 
 .uncommon {
@@ -160,39 +162,43 @@ div.uncommon {
 }
 
 div.rare {
-    box-shadow: 0 0 20px rgba(var(--rare-color), 0.4);
+    box-shadow: 0 0 30px rgb(var(--rare-color));
+    border: solid 1px rgb(var(--rare-color));
 }
 
 .rare {
     color: rgb(var(--rare-color));
-    text-shadow: 0 0 20px rgba(var(--rare-color), 0.4);
+    text-shadow: 0 0 30px rgb(var(--rare-color));
 }
 
 div.epic {
-    box-shadow: 0 0 20px rgba(var(--epic-color), 0.9);
+    box-shadow: 0 0 30px rgba(var(--epic-color), 0.9);
+    border: solid 1px rgb(var(--epic-color));
 }
 
 .epic {
     color: rgb(var(--epic-color));
-    text-shadow: 0 0 20px rgba(var(--epic-color), 0.9);
+    text-shadow: 0 0 30px rgba(var(--epic-color), 0.9);
 }
 
 div.mythic {
-    box-shadow: 0 0 25px rgba(var(--mythic-color), 0.9);
+    box-shadow: 0 0 35px rgb(var(--mythic-color));
+    border: solid 1px rgb(var(--mythic-color));
 }
 
 .mythic {
     color: rgb(var(--mythic-color));
-    text-shadow: 0 0 25px rgba(var(--mythic-color), 0.9);
+    text-shadow: 0 0 35px rgb(var(--mythic-color));
 }
 
 div.legendary {
-    box-shadow: 0 0 30px rgb(var(--legendary-color));
+    box-shadow: 0 0 40px rgb(var(--legendary-color));
+    border: solid 1px rgb(var(--legendary-color));
 }
 
 .legendary {
     color: rgb(var(--legendary-color));
-    text-shadow: 0 0 30px rgb(var(--legendary-color));
+    text-shadow: 0 0 40px rgb(var(--legendary-color));
 }
 
 /* Анимация после прокрутки */

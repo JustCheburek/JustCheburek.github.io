@@ -8,7 +8,7 @@ function get_all_chances(array) {
     return all_chances
 }
 
-function get_random_item(array, all_chances=array.length) {
+function get_random_item(array, all_chances = array.length) {
     // Рандомная редкость от 0 до all_chances
     let random_chance = Math.floor(Math.random() * all_chances);
 
@@ -29,42 +29,91 @@ function update() {
     // Смена редкости предмета
     for (let item of container_items.children) {
         // Тип предмета
-        let type_item = get_random_item(case_type, all_chances_case)
+        let type_item = get_random_item(case_now, all_chances_case)
         item.innerText = type_item.name
 
-        if (type_item.rarity !== "random" && !item.classList.contains(type_item.rarity)) {
-            item.classList.add(type_item.rarity)
-        }
-
-        else {
+        if (type_item.rarity === "random") {
             // Удаляем редкости
-            for (let rarity_id = 0; rarity_id < rarity_type.length; rarity_id++) {
-                if (item.classList.contains(rarity_type[rarity_id].name)) {
-                    item.classList.remove(rarity_type[rarity_id].name)
+            for (let rarity_id = 0; rarity_id < rarities.length; rarity_id++) {
+                if (item.classList.contains(rarities[rarity_id].name)) {
+                    item.classList.remove(rarities[rarity_id].name)
                 }
             }
 
             // Выдаём редкость
-            let rarity = get_random_item(rarity_type, all_chances_rarities)
+            let rarity = get_random_item(rarities, all_chances_rarities)
 
             item.classList.add(rarity.name)
+        } else {
+            // Если нет класса, то выдаём
+            if (!item.classList.contains(type_item.rarity)) {
+                item.classList.add(type_item.rarity)
+            }
         }
     }
 }
 
-function change_type() {
-    // Изменение кейса
-    let name = document.querySelector("#case_select").value
-    case_type = case_types[name]
+function change_type(type) {
+    if (type === undefined) {
+        // Изменение кейса
+        type = document.querySelector("#case_select").value
+    }
+
+    if (type === "common") {
+        // Кейсы
+        case_now[0].chance = 7 // Эмоция
+        case_now[1].chance = 6 // Частицы
+        case_now[2].chance = 5 // Стрелы
+        case_now[3].chance = 1 // Суффикс
+        case_now[4].chance = 1 // Эффект после смерти
+        case_now[5].chance = 1 // Питомец
+
+        // Редкости
+        rarities[0].chance = 10 // common
+        rarities[1].chance = 7 // uncommon
+        rarities[2].chance = 5 // rare
+        rarities[3].chance = 3 // epic
+        rarities[4].chance = 2 // mythic
+        rarities[5].chance = 1 // legendary
+    } else if (type === "rare") {
+        // Кейсы
+        case_now[0].chance = 6 // Эмоция
+        case_now[1].chance = 5 // Частицы
+        case_now[2].chance = 4 // Стрелы
+        case_now[3].chance = 2 // Суффикс
+        case_now[4].chance = 2 // Эффект после смерти
+        case_now[5].chance = 2 // Питомец
+
+        // Редкости
+        rarities[0].chance = 6 // common
+        rarities[1].chance = 6 // uncommon
+        rarities[2].chance = 7 // rare
+        rarities[3].chance = 4 // epic
+        rarities[4].chance = 3 // mythic
+        rarities[5].chance = 2 // legendary
+    } else if (type === "legendary") {
+        // Кейсы
+        case_now[0].chance = 6 // Эмоция
+        case_now[1].chance = 5 // Частицы
+        case_now[2].chance = 4 // Стрелы
+        case_now[3].chance = 4 // Суффикс
+        case_now[4].chance = 4 // Эффект после смерти
+        case_now[5].chance = 3 // Питомец
+
+        // Редкости
+        rarities[0].chance = 5 // common
+        rarities[1].chance = 5 // uncommon
+        rarities[2].chance = 5 // rare
+        rarities[3].chance = 6 // epic
+        rarities[4].chance = 5 // mythic
+        rarities[5].chance = 3 // legendary
+    }
 
     // Сумма шансов всех типов
-    all_chances_case = get_all_chances(case_type)
-
-    // Изменение редкости
-    rarity_type = rarities_types[name]
+    all_chances_case = get_all_chances(case_now)
 
     // Сумма шансов всех редкостей
-    all_chances_rarities = get_all_chances(rarity_type)
+    all_chances_rarities = get_all_chances(rarities)
 
     update()
 }
@@ -89,7 +138,7 @@ const roll = document.querySelector("#roll")
 // const root = document.querySelector(":root")
 
 // Редкости в обычном сундуке
-const common_rarities = [
+let rarities = [
     {
         name: "common",
         chance: 10
@@ -116,86 +165,46 @@ const common_rarities = [
     }
 ]
 
-// Редкости в редком сундуке
-const rare_rarities = [
-    {
-        name: "common",
-        chance: 7
-    },
-    {
-        name: "uncommon",
-        chance: 6
-    },
-    {
-        name: "rare",
-        chance: 7
-    },
-    {
-        name: "epic",
-        chance: 4
-    },
-    {
-        name: "mythic",
-        chance: 3
-    },
-    {
-        name: "legendary",
-        chance: 2
-    }
-]
-
-// Редкости в легендарном сундуке
-const legendary_rarities = [
-    {
-        name: "common",
-        chance: 5
-    },
-    {
-        name: "uncommon",
-        chance: 5
-    },
-    {
-        name: "rare",
-        chance: 5
-    },
-    {
-        name: "epic",
-        chance: 6
-    },
-    {
-        name: "mythic",
-        chance: 5
-    },
-    {
-        name: "legendary",
-        chance: 3
-    }
-]
-
-const rarities_types = {
-    "common": common_rarities,
-    "rare": rare_rarities,
-    "legendary": legendary_rarities
-}
-let rarity_type = common_rarities
-
 // Кейсы
-// Обычный кейс
-const common_case = [
+let case_now = [
     {
         name: "emote",
         chance: 7,
-        rarity: "random"
+        rarity: "random",
+
+        // Редкости
+        common: [],
+        uncommon: [],
+        rare: [],
+        epic: [],
+        mythic: [],
+        legendary: []
     },
     {
         name: "particleeffects",
         chance: 6,
-        rarity: "random"
+        rarity: "random",
+
+        // Редкости
+        common: [],
+        uncommon: [],
+        rare: [],
+        epic: [],
+        mythic: [],
+        legendary: []
     },
     {
         name: "projectileeffects",
         chance: 5,
-        rarity: "random"
+        rarity: "random",
+
+        // Редкости
+        common: [],
+        uncommon: [],
+        rare: [],
+        epic: [],
+        mythic: [],
+        legendary: []
     },
     {
         name: "suffix",
@@ -210,90 +219,23 @@ const common_case = [
     {
         name: "pet",
         chance: 1,
-        rarity: "random"
+        rarity: "random",
+
+        // Редкости
+        common: [],
+        uncommon: [],
+        rare: [],
+        epic: [],
+        mythic: [],
+        legendary: []
     }
 ]
-
-// Редкий кейс
-const rare_case = [
-    {
-        name: "emote",
-        chance: 6,
-        rarity: "random"
-    },
-    {
-        name: "particleeffects",
-        chance: 5,
-        rarity: "random"
-    },
-    {
-        name: "projectileeffects",
-        chance: 4,
-        rarity: "random"
-    },
-    {
-        name: "suffix",
-        chance: 2,
-        rarity: "epic"
-    },
-    {
-        name: "death_effect",
-        chance: 2,
-        rarity: "legendary"
-    },
-    {
-        name: "pet",
-        chance: 2,
-        rarity: "random"
-    }
-]
-
-// Легендарный кейс
-const legendary_case = [
-    {
-        name: "emote",
-        chance: 6,
-        rarity: "random"
-    },
-    {
-        name: "particleeffects",
-        chance: 5,
-        rarity: "random"
-    },
-    {
-        name: "projectileeffects",
-        chance: 4,
-        rarity: "random"
-    },
-    {
-        name: "suffix",
-        chance: 4,
-        rarity: "epic"
-    },
-    {
-        name: "death_effect",
-        chance: 4,
-        rarity: "legendary"
-    },
-    {
-        name: "pet",
-        chance: 3,
-        rarity: "random"
-    }
-]
-
-const case_types = {
-    "common": common_case,
-    "rare": rare_case,
-    "legendary": legendary_case
-}
-let case_type = common_case
 
 // Суммы шансов
-let all_chances_rarities = get_all_chances(rarity_type)
+let all_chances_rarities = get_all_chances(rarities)
 
 // Сумма шансов всех типов
-let all_chances_case = get_all_chances(case_type)
+let all_chances_case = get_all_chances(case_now)
 
 update()
 
@@ -307,9 +249,7 @@ window.addEventListener("load", function () {
             roll.innerText = "Крутить"
 
             update()
-        }
-
-        else {
+        } else {
             // Меняет текст кнопки
             roll.innerText = "Сбросить"
         }
