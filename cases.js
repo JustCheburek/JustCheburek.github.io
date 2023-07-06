@@ -8,34 +8,47 @@ function get_all_chances(array) {
     return all_chances
 }
 
-function get_random_item(array, all_chances) {
+function get_random_item(array, all_chances=array.length) {
     // Рандомная редкость от 0 до all_chances
     let random_chance = Math.floor(Math.random() * all_chances);
 
     // Нахождение шанса выпавшего предмета по редкости
-    let id = 0;
-    for (let chance = array[0].chance; chance <= random_chance; chance += array[id].chance) {
-        id++;
+    if (all_chances !== array.length) {
+        let id = 0;
+        for (let chance = array[0].chance; chance <= random_chance; chance += array[id].chance) {
+            id++;
+        }
+
+        return array[id]
     }
 
-    return array[id].name
+    return array[random_chance]
 }
 
 function update() {
     // Смена редкости предмета
-    for (let child of container_items.children) {
+    for (let item of container_items.children) {
         // Тип предмета
-        child.innerText = get_random_item(case_type, all_chances_case)
+        let type_item = get_random_item(case_type, all_chances_case)
+        item.innerText = type_item.name
 
-        // Удаляем редкости
-        for (let rarity_id = 0; rarity_id < rarity_type.length; rarity_id++) {
-            if (child.classList.contains(rarity_type[rarity_id].name)) {
-                child.classList.remove(rarity_type[rarity_id].name)
-            }
+        if (type_item.rarity !== "random" && !item.classList.contains(type_item.rarity)) {
+            item.classList.add(type_item.rarity)
         }
 
-        // Выдаём редкость
-        child.classList.add(get_random_item(rarity_type, all_chances_rarities))
+        else {
+            // Удаляем редкости
+            for (let rarity_id = 0; rarity_id < rarity_type.length; rarity_id++) {
+                if (item.classList.contains(rarity_type[rarity_id].name)) {
+                    item.classList.remove(rarity_type[rarity_id].name)
+                }
+            }
+
+            // Выдаём редкость
+            let rarity = get_random_item(rarity_type, all_chances_rarities)
+
+            item.classList.add(rarity.name)
+        }
     }
 }
 
@@ -171,27 +184,33 @@ let rarity_type = common_rarities
 const common_case = [
     {
         name: "emote",
-        chance: 7
+        chance: 7,
+        rarity: "random"
     },
     {
-        name: "particles",
-        chance: 6
+        name: "particleeffects",
+        chance: 6,
+        rarity: "random"
     },
     {
-        name: "hit",
-        chance: 5
+        name: "projectileeffects",
+        chance: 5,
+        rarity: "random"
     },
     {
         name: "suffix",
-        chance: 1
+        chance: 1,
+        rarity: "epic"
     },
     {
         name: "death_effect",
-        chance: 1
+        chance: 1,
+        rarity: "legendary"
     },
     {
         name: "pet",
-        chance: 1
+        chance: 1,
+        rarity: "random"
     }
 ]
 
@@ -199,27 +218,33 @@ const common_case = [
 const rare_case = [
     {
         name: "emote",
-        chance: 6
+        chance: 6,
+        rarity: "random"
     },
     {
-        name: "particles",
-        chance: 5
+        name: "particleeffects",
+        chance: 5,
+        rarity: "random"
     },
     {
-        name: "hit",
-        chance: 4
+        name: "projectileeffects",
+        chance: 4,
+        rarity: "random"
     },
     {
         name: "suffix",
-        chance: 2
+        chance: 2,
+        rarity: "epic"
     },
     {
         name: "death_effect",
-        chance: 2
+        chance: 2,
+        rarity: "legendary"
     },
     {
         name: "pet",
-        chance: 2
+        chance: 2,
+        rarity: "random"
     }
 ]
 
@@ -227,27 +252,33 @@ const rare_case = [
 const legendary_case = [
     {
         name: "emote",
-        chance: 6
+        chance: 6,
+        rarity: "random"
     },
     {
-        name: "particles",
-        chance: 5
+        name: "particleeffects",
+        chance: 5,
+        rarity: "random"
     },
     {
-        name: "hit",
-        chance: 4
+        name: "projectileeffects",
+        chance: 4,
+        rarity: "random"
     },
     {
         name: "suffix",
-        chance: 4
+        chance: 4,
+        rarity: "epic"
     },
     {
         name: "death_effect",
-        chance: 4
+        chance: 4,
+        rarity: "legendary"
     },
     {
         name: "pet",
-        chance: 4
+        chance: 3,
+        rarity: "random"
     }
 ]
 

@@ -7,10 +7,65 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de710ec4-f719-4bcd-99d1-12ccf52d1801" name="Changes" comment="23.6">
+    <list default="true" id="de710ec4-f719-4bcd-99d1-12ccf52d1801" name="Changes" comment="23.7">
+      <change afterPath="$PROJECT_DIR$/media/shop/deatheffects/explosion.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/deatheffects/firework.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/emotes/angry.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/emotes/cheeky.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/emotes/cool.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/emotes/cry.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/emotes/dealwithit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/emotes/happy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/emotes/love.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/emotes/lovestruckallay.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/emotes/raiseeyebrows.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/emotes/scarycandle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/emotes/surprised.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/emotes/wink.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/particleeffects/angelwings.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/particleeffects/arcaneflame.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/particleeffects/bloodhelix.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/particleeffects/crushedcandycane.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/particleeffects/cursedfootprints.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/particleeffects/cursedhalo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/particleeffects/divinehalo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/particleeffects/enchanted.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/particleeffects/enderaura.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/particleeffects/enderfootprints.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/particleeffects/firewaves.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/particleeffects/flamerings.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/particleeffects/frostlord.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/particleeffects/frozenwalk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/particleeffects/greensparks.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/particleeffects/hearts.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/particleeffects/inferno.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/particleeffects/inlove.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/particleeffects/magicalrods.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/particleeffects/music.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/particleeffects/notes.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/particleeffects/rainbowwings.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/particleeffects/rainycloud.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/particleeffects/santahat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/particleeffects/shadowfootprints.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/particleeffects/snowcloud.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/particleeffects/snowfootprints.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/particleeffects/springfootprints.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/particleeffects/superhero.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/shop/particleeffects/volcanichalo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/case.html" beforeDir="false" afterPath="$PROJECT_DIR$/case.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cases.js" beforeDir="false" afterPath="$PROJECT_DIR$/cases.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/shop/item.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/shop/item2.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/shop/item3.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/shop/item4.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/shop/item5.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/shop/item6.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/shop/item7.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/shop/item8.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/shop/item9.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/shop_style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +254,8 @@
       <workItem from="1688087213395" duration="9186000" />
       <workItem from="1688376163409" duration="19567000" />
       <workItem from="1688460386001" duration="3456000" />
-      <workItem from="1688519669157" duration="20945000" />
+      <workItem from="1688519669157" duration="21954000" />
+      <workItem from="1688605466071" duration="4688000" />
     </task>
     <task id="LOCAL-00202" summary="13.1">
       <created>1683531409421</created>
@@ -544,7 +600,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687491790668</updated>
     </task>
-    <option name="localTasksCounter" value="258" />
+    <option name="localTasksCounter" value="259" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -563,7 +619,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="17.7" />
     <MESSAGE value="17.8" />
     <MESSAGE value="17.9" />
     <MESSAGE value="18" />
@@ -588,6 +643,7 @@
     <MESSAGE value="23.4" />
     <MESSAGE value="23.5" />
     <MESSAGE value="23.6" />
-    <option name="LAST_COMMIT_MESSAGE" value="23.6" />
+    <MESSAGE value="23.7" />
+    <option name="LAST_COMMIT_MESSAGE" value="23.7" />
   </component>
 </project>
