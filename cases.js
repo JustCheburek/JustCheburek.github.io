@@ -8,9 +8,19 @@ function get_all_chances(array) {
     return all_chances
 }
 
-function get_random_item(array, all_chances = array.length) {
+function get_random_item(array, all_chances) {
+    // Если не дали все шансы
+    if (all_chances === undefined) {
+        // Если не дали список
+        if (array === undefined) {
+            return undefined
+        }
+        // Если дали список, то считаем длину
+        all_chances = array.length
+    }
+
     // Рандомная редкость от 0 до all_chances
-    let random_chance = Math.floor(Math.random() * all_chances);
+    let random_chance = Math.floor(Math.random() * all_chances)
 
     // Нахождение шанса выпавшего предмета по редкости
     if (all_chances !== array.length) {
@@ -26,11 +36,12 @@ function get_random_item(array, all_chances = array.length) {
 }
 
 function update() {
-    // Смена редкости предмета
+    // Смена типа и редкости предмета
     for (let item of container_items.children) {
         // Тип предмета
         let type_item = get_random_item(case_now, all_chances_case)
-        item.innerText = type_item.name
+        let rarity_item = "all"
+        let drop = type_item.name
 
         if (type_item.rarity === "random") {
             // Удаляем редкости
@@ -41,16 +52,26 @@ function update() {
             }
 
             // Выдаём редкость
-            let rarity = get_random_item(rarities, all_chances_rarities)
+            rarity_item = get_random_item(rarities, all_chances_rarities).name
 
-            item.classList.add(rarity.name)
+            item.classList.add(rarity_item)
         } else {
             // Если нет класса, то выдаём
             if (!item.classList.contains(type_item.rarity)) {
                 item.classList.add(type_item.rarity)
             }
         }
+
+        // Сам предмет
+        if (type_item[rarity_item] !== null) {
+            drop = get_random_item(type_item[rarity_item])
+
+            item.style.backgroundImage = `url(media/shop/${type_item.name}/${drop}.png`
+        }
     }
+
+    // Смена части выпавшего предмета
+    change_width_roll()
 }
 
 function change_type(type) {
@@ -59,6 +80,7 @@ function change_type(type) {
         type = document.querySelector("#case_select").value
     }
 
+    // Изменение шансов
     if (type === "common") {
         // Кейсы
         case_now[0].chance = 7 // Эмоция
@@ -118,24 +140,31 @@ function change_type(type) {
     update()
 }
 
-/*function get_result_item() {
-    let item = container_items.querySelector(".item")
+function change_width_roll() {
+    // Начальная позиция
+    const roll_width_start_pos = Number(getComputedStyle(root).getPropertyValue('--roll-width-start-pos'))
 
-    // Получение размеров
-    let width_item = item.offsetWidth
+    // Конечная позиция
+    const roll_width_end_pos = Number(getComputedStyle(root).getPropertyValue('--roll-width-end-pos'))
 
-    // Получение ширины рулетки
-    let roll_width = getComputedStyle(root).getPropertyValue("--roll-width")
-}*/
+    // Разница
+    let roll_width_random = roll_width_end_pos - roll_width_start_pos
+
+    // Рандомное число
+    let random_part = Math.floor(Math.random() * roll_width_random)
+
+    // Изменение позиции итогового предмета
+    root.style.setProperty('--roll-width', `-${roll_width_start_pos + random_part}px`);
+}
 
 // Контейнер с предметами
-const container_items = document.querySelector("#natural_container_items")
+const container_items = document.querySelector("#natural_container")
 
 // Кнопка кручения
 const roll = document.querySelector("#roll")
 
 // Получение root
-// const root = document.querySelector(":root")
+const root = document.querySelector(":root")
 
 // Редкости в обычном сундуке
 let rarities = [
@@ -168,30 +197,38 @@ let rarities = [
 // Кейсы
 let case_now = [
     {
-        name: "emote",
+        name: "emotes",
         chance: 7,
         rarity: "random",
 
         // Редкости
-        common: [],
-        uncommon: [],
-        rare: [],
-        epic: [],
-        mythic: [],
-        legendary: []
+        common: ["cheeky", "happy"],
+        uncommon: ["angry", "dealwithit", "raiseeyebrows", "wink"],
+        rare: ["cry", "lovestruckallay", "surprised", "glowingpumpkin"],
+        epic: ["love"],
+        mythic: ["scarycandle"],
+        legendary: ["cool"]
     },
     {
         name: "particleeffects",
         chance: 6,
         rarity: "random",
 
-        // Редкости
-        common: [],
-        uncommon: [],
-        rare: [],
-        epic: [],
-        mythic: [],
-        legendary: []
+        // Дроп
+        common: [
+            "arcaneflame", "enchanted", "frostlord", "music", "notes"
+        ],
+        uncommon: [
+            "crushedcandycane", "cursedfootprints", "enderaura", "frozenwalk",
+            "hearts", "inlove", "shadowfootprints", "springfootprints"
+        ],
+        rare: ["cursedhalo", "snowcloud", "snowfootprints"],
+        epic: [
+            "divinehalo", "enderfootprints", "firewaves", "flamerings",
+            "greensparks", "inferno", "santahat", "volcanichalo"
+        ],
+        mythic: ["bloodhelix", "magicalrods", "rainycloud"],
+        legendary: ["angelwings", "rainbowwings", "superhero"]
     },
     {
         name: "projectileeffects",
@@ -199,22 +236,28 @@ let case_now = [
         rarity: "random",
 
         // Редкости
-        common: [],
-        uncommon: [],
-        rare: [],
-        epic: [],
-        mythic: [],
-        legendary: []
+        common: null,
+        uncommon: null,
+        rare: null,
+        epic: null,
+        mythic: null,
+        legendary: null
     },
     {
         name: "suffix",
         chance: 1,
-        rarity: "epic"
+        rarity: "epic",
+
+        // Дроп
+        all: null
     },
     {
-        name: "death_effect",
+        name: "deatheffects",
         chance: 1,
-        rarity: "legendary"
+        rarity: "mythic",
+
+        // Дроп
+        all: ["explosion", "firework", "lighting"]
     },
     {
         name: "pet",
@@ -222,12 +265,12 @@ let case_now = [
         rarity: "random",
 
         // Редкости
-        common: [],
-        uncommon: [],
-        rare: [],
-        epic: [],
-        mythic: [],
-        legendary: []
+        common: null,
+        uncommon: null,
+        rare: null,
+        epic: null,
+        mythic: null,
+        legendary: null
     }
 ]
 
