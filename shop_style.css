@@ -1,8 +1,12 @@
 :root {
-    /* Кручение */
-    --roll-time: 25s;
-    --roll-width-start-pos: 15700;
-    --roll-width-end-pos: 15900;
+    /* Время кручения */
+    --min-roll-time: 20000; /* Минимальное время */
+    --max-roll-time: 30000; /* Максимальное время */
+    --roll-time: 0;
+
+    /* Сила кручения */
+    --min-roll-width: 15700; /* Минимальная ширина */
+    --max-roll-width: 15950; /* Максимальная ширина */
     --roll-width: 0;
 
     /* Цвета */
@@ -118,7 +122,7 @@
     /* Расположение */
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
 
     padding: 20px;
     margin: 0 20px;
@@ -133,10 +137,17 @@
     font-size: 22px;
 
     background-color: rgb(18, 13, 25);
-    background-image: url("media/shop/emotes/love.png");
     background-repeat: no-repeat;
     background-size: 240px 135px;
     background-position: center;
+
+    transition: transform 1000ms;
+}
+
+.item > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 /* Редкости */
@@ -201,12 +212,21 @@ div.legendary {
 }
 
 /* Анимация после прокрутки */
-#natural_container.roll .result_item {
-    animation: show_up 1s var(--roll-time) forwards;
+#natural_container.win .result_item {
+    transform: scale(1.3);
 }
 
-#natural_container.roll *:not(.result_item) {
-    animation: disappear 1s var(--roll-time) forwards;
+.result_item > p {
+    opacity: 0;
+    transition: 1500ms opacity;
+}
+
+#natural_container.win .result_item > p {
+    opacity: 1;
+}
+
+#natural_container.win .item:not(.result_item) {
+    animation: disappear 1s forwards;
 }
 
 /* Кнопка */
@@ -226,15 +246,6 @@ footer {
     }
     100% {
         left: var(--roll-width);
-    }
-}
-
-@keyframes show_up {
-    0% {
-        transform: scale(1);
-    }
-    100% {
-        transform: scale(1.3);
     }
 }
 

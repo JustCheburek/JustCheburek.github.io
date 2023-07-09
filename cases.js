@@ -8,17 +8,7 @@ function get_all_chances(array) {
     return all_chances
 }
 
-function get_random_item(array, all_chances) {
-    // Если не дали все шансы
-    if (all_chances === undefined) {
-        // Если не дали список
-        if (array === undefined) {
-            return undefined
-        }
-        // Если дали список, то считаем длину
-        all_chances = array.length
-    }
-
+function get_random_item(array, all_chances = array.length) {
     // Рандомная редкость от 0 до all_chances
     let random_chance = Math.floor(Math.random() * all_chances)
 
@@ -37,19 +27,16 @@ function get_random_item(array, all_chances) {
 
 function update() {
     // Смена типа и редкости предмета
-    for (let item of container_items.children) {
+    for (let item of container.children) {
         // Тип предмета
         let type_item = get_random_item(case_now, all_chances_case)
+        item.innerHTML = ""
         let rarity_item = "all"
         let drop = type_item.name
 
         if (type_item.rarity === "random") {
             // Удаляем редкости
-            for (let rarity_id = 0; rarity_id < rarities.length; rarity_id++) {
-                if (item.classList.contains(rarities[rarity_id].name)) {
-                    item.classList.remove(rarities[rarity_id].name)
-                }
-            }
+            clear_rarities(item)
 
             // Выдаём редкость
             rarity_item = get_random_item(rarities, all_chances_rarities).name
@@ -64,14 +51,53 @@ function update() {
 
         // Сам предмет
         if (type_item[rarity_item] !== null) {
-            drop = get_random_item(type_item[rarity_item])
+            if (typeof type_item[rarity_item] === "string") {
+                drop = item.textContent = type_item[rarity_item]
+            } else {
+                drop = get_random_item(type_item[rarity_item])
 
-            item.style.backgroundImage = `url(media/shop/${type_item.name}/${drop}.png`
+                item.innerHTML = `<img src="media/shop/${type_item.name}/${drop}.png" alt="Фича">`
+            }
+        } else { // Код не нужен, когда кейсы будут закончены
+            item.innerHTML = `<p>${type_item.name}</p>`
+            drop = type_item.name
+        }
+
+        // Приз
+        if (item.classList.contains("result_item")) {
+            result_drop = {
+                name: drop,
+                rarity: rarity_item,
+                chance: type_item.chance,
+                background: item.style.backgroundImage,
+                type: type_item.name
+            }
         }
     }
 
     // Смена части выпавшего предмета
     change_width_roll()
+    change_time_roll()
+}
+
+function win() {
+    // Выигрыш
+    container.classList.add("win")
+
+    if (result_drop.background !== "") {
+        result.style.alignItems = "flex-end"
+        result.innerHTML = `<p>${result_drop.name}</p>`
+    }
+}
+
+function clear_win() {
+    // Очистка выигрыша
+    if (result_drop.background !== "") {
+        result.style.alignItems = "center"
+        result.innerHTML = ""
+    }
+
+    container.classList.remove("win")
 }
 
 function change_type(type) {
@@ -142,26 +168,54 @@ function change_type(type) {
 
 function change_width_roll() {
     // Начальная позиция
-    const roll_width_start_pos = Number(getComputedStyle(root).getPropertyValue('--roll-width-start-pos'))
+    let min_roll_width = Number(getComputedStyle(root).getPropertyValue('--min-roll-width'))
 
     // Конечная позиция
-    const roll_width_end_pos = Number(getComputedStyle(root).getPropertyValue('--roll-width-end-pos'))
-
-    // Разница
-    let roll_width_random = roll_width_end_pos - roll_width_start_pos
+    let max_roll_width = Number(getComputedStyle(root).getPropertyValue('--max-roll-width'))
 
     // Рандомное число
-    let random_part = Math.floor(Math.random() * roll_width_random)
+    let random_part = Math.floor(Math.random() * (min_roll_width - max_roll_width))
 
     // Изменение позиции итогового предмета
-    root.style.setProperty('--roll-width', `-${roll_width_start_pos + random_part}px`);
+    root.style.setProperty('--roll-width', `-${min_roll_width - random_part}px`);
+}
+
+function change_time_roll() {
+    // Начальная позиция
+    let min_roll_time = Number(getComputedStyle(root).getPropertyValue('--min-roll-time'))
+
+    // Конечная позиция
+    let max_roll_time = Number(getComputedStyle(root).getPropertyValue('--max-roll-time'))
+
+    // Рандомное число
+    let random_part = Math.floor(Math.random() * (max_roll_time - min_roll_time))
+
+    roll_time = max_roll_time - random_part
+
+    // Изменение позиции итогового предмета
+    root.style.setProperty('--roll-time', `${max_roll_time - random_part}ms`);
+}
+
+function clear_rarities(item) {
+    for (let rarity_id = 0; rarity_id < rarities.length; rarity_id++) {
+        if (item.classList.contains(rarities[rarity_id].name)) {
+            item.classList.remove(rarities[rarity_id].name)
+        }
+    }
 }
 
 // Контейнер с предметами
-const container_items = document.querySelector("#natural_container")
+const container = document.querySelector("#natural_container")
+
+// Итоговый предмет
+const result = document.querySelector(".result_item")
 
 // Кнопка кручения
 const roll = document.querySelector("#roll")
+
+let roll_time  // Время кручения
+let timeout  // Тайм аут
+let result_drop  // Инфо о призе
 
 // Получение root
 const root = document.querySelector(":root")
@@ -249,7 +303,7 @@ let case_now = [
         rarity: "epic",
 
         // Дроп
-        all: null
+        all: "suffix"
     },
     {
         name: "deatheffects",
@@ -280,6 +334,7 @@ let all_chances_rarities = get_all_chances(rarities)
 // Сумма шансов всех типов
 let all_chances_case = get_all_chances(case_now)
 
+// Кручение
 update()
 
 // Загрузка окна
@@ -287,17 +342,30 @@ window.addEventListener("load", function () {
     // Нажатие на кнопку
     roll.addEventListener("click", function () {
         // Изменение текста на кнопке
-        if (container_items.classList.contains("roll")) {
+        if (container.classList.contains("roll")) {
             // Меняем текст кнопки
-            roll.innerText = "Крутить"
+            roll.textContent = "Крутить"
 
-            update()
+            // Сброс
+            clearTimeout(timeout)
+
+            // Если конец рулетки
+            if (container.classList.contains("win")) {
+                // Убирание выигрыша
+                clear_win()
+
+                // Кручение
+                update()
+            }
         } else {
+            // Победа
+            timeout = setTimeout(win, roll_time+2000)
+
             // Меняет текст кнопки
-            roll.innerText = "Сбросить"
+            roll.textContent = "Сбросить"
         }
 
         // Изменение класса контейнера
-        container_items.classList.toggle("roll")
+        container.classList.toggle("roll")
     })
 })

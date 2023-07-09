@@ -4,3 +4,5 @@ https://minebridge.ml/rules.html
 https://minebridge.ml/news.html
 https://minebridge.ml/blacklist.html
 https://minebridge.ml/mods.html
+https://minebridge.ml/case.html
+https://minebridge.ml/shop.html
