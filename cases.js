@@ -92,13 +92,18 @@ function clear_win() {
 }
 
 function change_type(type) {
+    let case_select = document.querySelector("#case_select")
+
     if (type === undefined) {
         // Изменение кейса
-        type = document.querySelector("#case_select").value
+        type = case_select.value
     }
 
     // Изменение шансов
-    if (type === "common") {
+    if (type === "common" || type === null) {
+        // Изменение выбора
+        case_select.selectedIndex = 0
+
         // Кейсы
         case_now[0].chance = 7 // Эмоция
         case_now[1].chance = 6 // Частицы
@@ -115,6 +120,9 @@ function change_type(type) {
         rarities[4].chance = 2 // mythic
         rarities[5].chance = 1 // legendary
     } else if (type === "rare") {
+        // Изменение выбора
+        case_select.selectedIndex = 1
+
         // Кейсы
         case_now[0].chance = 6 // Эмоция
         case_now[1].chance = 5 // Частицы
@@ -131,6 +139,9 @@ function change_type(type) {
         rarities[4].chance = 3 // mythic
         rarities[5].chance = 2 // legendary
     } else if (type === "legendary") {
+        // Изменение выбора
+        case_select.selectedIndex = 2
+
         // Кейсы
         case_now[0].chance = 6 // Эмоция
         case_now[1].chance = 5 // Частицы
@@ -153,6 +164,9 @@ function change_type(type) {
 
     // Сумма шансов всех редкостей
     all_chances_rarities = get_all_chances(rarities)
+
+    // Сохранение в локальную память
+    localStorage.setItem("type", type)
 
     update()
 }
@@ -325,8 +339,8 @@ let all_chances_rarities = get_all_chances(rarities)
 // Сумма шансов всех типов
 let all_chances_case = get_all_chances(case_now)
 
-// Кручение
-update()
+// Кручение + обновление
+change_type(localStorage.getItem("type"))
 
 // Загрузка окна
 window.addEventListener("load", function () {

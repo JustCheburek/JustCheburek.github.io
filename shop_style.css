@@ -1,7 +1,7 @@
 :root {
     /* Время кручения */
     --min-roll-time: 20000; /* Минимальное время */
-    --max-roll-time: 30000; /* Максимальное время */
+    --max-roll-time: 25000; /* Максимальное время */
     --roll-time: 0;
 
     /* Сила кручения */
@@ -48,15 +48,14 @@ body {
 #visual_container {
     /* Расположение */
     position: relative;
+    margin: 20px auto;
 
     display: flex;
     align-items: center;
-    gap: 50px;
 
     /* Размеры */
     height: 350px;
     width: 800px;
-    margin: 20px auto;
 
     /* Границы */
     border: solid rgba(var(--unic-color), 0.5) 1px;
