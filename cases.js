@@ -28,11 +28,10 @@ function get_random_item(array, all_chances = array.length) {
 function update() {
     // Смена типа и редкости предмета
     for (let item of container.children) {
-        // Тип предмета
-        let type_item = get_random_item(case_now, all_chances_case)
-        item.innerHTML = ""
-        let rarity_item = "all"
-        let drop = type_item.name
+        let type_item = get_random_item(case_now, all_chances_case) // Тип предмета
+        item.innerHTML = `<p>${type_item.name}</p>` // Текст фичи
+        let rarity_item = "drop"  // Одна редкость
+        let drop = type_item.name // Дроп
 
         if (type_item.rarity === "random") {
             // Удаляем редкости
@@ -51,16 +50,8 @@ function update() {
 
         // Сам предмет
         if (type_item[rarity_item] !== null) {
-            if (typeof type_item[rarity_item] === "string") {
-                drop = item.textContent = type_item[rarity_item]
-            } else {
-                drop = get_random_item(type_item[rarity_item])
-
-                item.innerHTML = `<img src="media/shop/${type_item.name}/${drop}.png" alt="Фича">`
-            }
-        } else { // Код не нужен, когда кейсы будут закончены
-            item.innerHTML = `<p>${type_item.name}</p>`
-            drop = type_item.name
+            drop = get_random_item(type_item[rarity_item])
+            item.innerHTML = `<img src="media/shop/${type_item.name}/${drop}.webp" alt="${type_item.name}/${drop}">`
         }
 
         // Приз
@@ -303,7 +294,7 @@ let case_now = [
         rarity: "epic",
 
         // Дроп
-        all: "suffix"
+        drop: null
     },
     {
         name: "deatheffects",
@@ -311,7 +302,7 @@ let case_now = [
         rarity: "mythic",
 
         // Дроп
-        all: ["explosion", "firework", "lighting"]
+        drop: ["explosion", "firework", "lighting"]
     },
     {
         name: "pet",
@@ -359,7 +350,7 @@ window.addEventListener("load", function () {
             }
         } else {
             // Победа
-            timeout = setTimeout(win, roll_time+2000)
+            timeout = setTimeout(win, roll_time+1000)
 
             // Меняет текст кнопки
             roll.textContent = "Сбросить"

@@ -18,9 +18,23 @@
     --legendary-color: 255, 215, 0; /* Легендарный */
 }
 
+body {
+    height: 100vh;
+}
+
 #max_size {
-    max-width: 1200px;
+    /* Расположение */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     margin: 0 auto;
+
+    /* Размеры */
+    max-width: 1200px;
+    height: 80%;
+
+    /* Отображение */
     font-weight: 500;
 }
 
@@ -135,11 +149,7 @@
     border-radius: 5px;
     font-weight: 600;
     font-size: 22px;
-
-    background-color: rgb(18, 13, 25);
-    background-repeat: no-repeat;
-    background-size: 240px 135px;
-    background-position: center;
+    background: rgb(18, 13, 25);
 
     transition: transform 1000ms;
 }
@@ -261,5 +271,18 @@ footer {
     100% {
         opacity: 0;
         transform: scale(0.5);
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+    #main_container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        gap: 70px;
+        margin: 70px 0;
+    }
+    #info_case, #case_select_container  {
+        font-size: var(--p-size);
     }
 }
