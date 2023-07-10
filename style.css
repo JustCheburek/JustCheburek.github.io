@@ -57,6 +57,10 @@
 
     --p-size: 18px;
     --p-line-height: 33px;
+
+    /* Длительность hover */
+    /* Сколько надо ждать перед появлением анимации */
+    --hover-delay: 350ms;
 }
 
 @media (max-width: 1200px) {

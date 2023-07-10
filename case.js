@@ -9,7 +9,14 @@ function get_all_chances(array) {
 }
 
 function get_random_item(array, all_chances = array.length) {
-    // Рандомная редкость от 0 до all_chances
+    /**
+     * Функция выдаёт рандомный value из списка
+     * @param {array} array - массив
+     * @param {int} all_chances - количество процентов
+     * @return {Object} - value
+     */
+
+        // Рандомная редкость от 0 до all_chances
     let random_chance = Math.floor(Math.random() * all_chances)
 
     // Нахождение шанса выпавшего предмета по редкости
@@ -26,11 +33,15 @@ function get_random_item(array, all_chances = array.length) {
 }
 
 function update() {
-    // Смена типа и редкости предмета
+    /* Обновление предметов */
+
+    // Смена типа и редкости предметов
     for (let item of container.children) {
         let type_item = get_random_item(case_now, all_chances_case) // Тип предмета
-        item.innerHTML = `<p>${type_item.name}</p>` // Текст фичи
-        let rarity_item = "drop"  // Одна редкость
+        item.innerHTML = `<p>${type_item.displayname}</p>` // Текст фичи
+        item.style.alignItems = "center" // Расположение текста
+        item.dataset.drop = "" // Сброс дропа
+        let rarity_item = "drop" // Одна редкость
         let drop = type_item.name // Дроп
 
         if (type_item.rarity === "random") {
@@ -38,31 +49,47 @@ function update() {
             clear_rarities(item)
 
             // Выдаём редкость
+            // Из словаря берём только имя (без процентов)
             rarity_item = get_random_item(rarities, all_chances_rarities).name
 
+            // Добавление класса редкости
             item.classList.add(rarity_item)
-        } else {
+        } else {  // Если редкость не рандомная
             // Если нет класса, то выдаём
             if (!item.classList.contains(type_item.rarity)) {
                 item.classList.add(type_item.rarity)
             }
         }
 
-        // Сам предмет
+        // Дроп + картинка
         if (type_item[rarity_item] !== null) {
-            drop = get_random_item(type_item[rarity_item])
-            item.innerHTML = `<img src="media/shop/${type_item.name}/${drop}.webp" alt="${type_item.name}/${drop}">`
+            if (type_item[rarity_item].length > 1) {
+                drop = get_random_item(type_item[rarity_item]) // Получение рандомного дропа
+            } else {
+                drop = type_item[rarity_item][0]
+            }
+
+            item.style.alignItems = "flex-end"  // Расположение текста
+
+            // html переменные
+            item.innerHTML = `<img src="media/shop/${type_item.name}/${drop.name}.webp" alt="${type_item.displayname}/${drop.displayname}">`
+
+            // Дата-данные
+            item.dataset.drop = drop.displayname
         }
 
         // Приз
         if (item.classList.contains("result_item")) {
             result_drop = {
-                name: drop,
+                drop: drop,
                 rarity: rarity_item,
-                chance: type_item.chance,
-                background: item.style.backgroundImage,
-                type: type_item.name
+                display: item.innerHTML,
+                type: type_item.name,
+                img: (type_item[rarity_item] !== null),
+                permision: `ultracosmetics.${type_item.name}.${drop.name}`
             }
+
+            console.log(result_drop)
         }
     }
 
@@ -74,21 +101,13 @@ function update() {
 function win() {
     // Выигрыш
     container.classList.add("win")
-
-    if (result_drop.background !== "") {
-        result.style.alignItems = "flex-end"
-        result.innerHTML = `<p>${result_drop.name}</p>`
-    }
+    body.classList.add("win")
 }
 
 function clear_win() {
     // Очистка выигрыша
-    if (result_drop.background !== "") {
-        result.style.alignItems = "center"
-        result.innerHTML = ""
-    }
-
     container.classList.remove("win")
+    body.classList.remove("win")
 }
 
 function change_type(type) {
@@ -209,135 +228,24 @@ function clear_rarities(item) {
     }
 }
 
+
 // Контейнер с предметами
 const container = document.querySelector("#natural_container")
-
-// Итоговый предмет
-const result = document.querySelector(".result_item")
 
 // Кнопка кручения
 const roll = document.querySelector("#roll")
 
-let roll_time  // Время кручения
-let timeout  // Тайм аут
-let result_drop  // Инфо о призе
-
 // Получение root
 const root = document.querySelector(":root")
 
-// Редкости в обычном сундуке
-let rarities = [
-    {
-        name: "common",
-        chance: 10
-    },
-    {
-        name: "uncommon",
-        chance: 7
-    },
-    {
-        name: "rare",
-        chance: 5
-    },
-    {
-        name: "epic",
-        chance: 3
-    },
-    {
-        name: "mythic",
-        chance: 2
-    },
-    {
-        name: "legendary",
-        chance: 1
-    }
-]
-
-// Кейсы
-let case_now = [
-    {
-        name: "emotes",
-        chance: 7,
-        rarity: "random",
-
-        // Редкости
-        common: ["cheeky", "happy"],
-        uncommon: ["angry", "dealwithit", "raiseeyebrows", "wink"],
-        rare: ["cry", "lovestruckallay", "surprised", "glowingpumpkin"],
-        epic: ["love"],
-        mythic: ["scarycandle"],
-        legendary: ["cool"]
-    },
-    {
-        name: "particleeffects",
-        chance: 6,
-        rarity: "random",
-
-        // Дроп
-        common: [
-            "arcaneflame", "enchanted", "frostlord", "music", "notes"
-        ],
-        uncommon: [
-            "crushedcandycane", "cursedfootprints", "enderaura", "frozenwalk",
-            "hearts", "inlove", "shadowfootprints", "springfootprints"
-        ],
-        rare: ["cursedhalo", "snowcloud", "snowfootprints"],
-        epic: [
-            "divinehalo", "enderfootprints", "firewaves", "flamerings",
-            "greensparks", "inferno", "santahat", "volcanichalo"
-        ],
-        mythic: ["bloodhelix", "magicalrods", "rainycloud"],
-        legendary: ["angelwings", "rainbowwings", "superhero"]
-    },
-    {
-        name: "projectileeffects",
-        chance: 5,
-        rarity: "random",
-
-        // Редкости
-        common: null,
-        uncommon: null,
-        rare: null,
-        epic: null,
-        mythic: null,
-        legendary: null
-    },
-    {
-        name: "suffix",
-        chance: 1,
-        rarity: "epic",
-
-        // Дроп
-        drop: null
-    },
-    {
-        name: "deatheffects",
-        chance: 1,
-        rarity: "mythic",
-
-        // Дроп
-        drop: ["explosion", "firework", "lighting"]
-    },
-    {
-        name: "pet",
-        chance: 1,
-        rarity: "random",
-
-        // Редкости
-        common: null,
-        uncommon: null,
-        rare: null,
-        epic: null,
-        mythic: null,
-        legendary: null
-    }
-]
+// Переменные
+let roll_time  // Время кручения
+let timer_win  // Тайм аут
+let result_drop  // Инфо о призе
 
 // Суммы шансов
-let all_chances_rarities = get_all_chances(rarities)
-
-// Сумма шансов всех типов
-let all_chances_case = get_all_chances(case_now)
+let all_chances_rarities
+let all_chances_case
 
 // Кручение + обновление
 change_type(localStorage.getItem("type"))
@@ -352,7 +260,7 @@ window.addEventListener("load", function () {
             roll.textContent = "Крутить"
 
             // Сброс
-            clearTimeout(timeout)
+            clearTimeout(timer_win)
 
             // Если конец рулетки
             if (container.classList.contains("win")) {
@@ -364,7 +272,7 @@ window.addEventListener("load", function () {
             }
         } else {
             // Победа
-            timeout = setTimeout(win, roll_time+1000)
+            timer_win = setTimeout(win, roll_time + 1000)
 
             // Меняет текст кнопки
             roll.textContent = "Сбросить"
