@@ -16,6 +16,9 @@ main {
     flex-wrap: wrap;
     gap: 100px;
     margin: 50px 0;
+
+    /* Размеры */
+    width: 100%;
 }
 
 /* Коробка для текстов */
@@ -75,6 +78,8 @@ main {
     border: solid var(--line-width) rgba(var(--unic-color), 0.3);
     border-radius: 20px;
     z-index: 1000;
+    font-size: var(--h2-size);
+    line-height: var(--h2-line-height);
 }
 
 /* Изображение */
@@ -111,13 +116,14 @@ main {
     justify-content: center;
     align-items: center;
     font-weight: 700;
-    font-size: 30px;
-    height: 100px;
+    font-size: var(--h2-size);
+    line-height: var(--h2-line-height);
+    min-height: 100px;
 }
 
 .description {
-    font-size: 20px;
-    line-height: 30px;
+    font-size: var(--p-size);
+    line-height: var(--p-line-height);
 }
 
 /* Функции текста */

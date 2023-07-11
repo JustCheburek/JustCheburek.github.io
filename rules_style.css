@@ -256,7 +256,7 @@ main {
     opacity: 0;
     width: 100%;
     height: max-content;
-    font-size: 16px;
+    font-size: calc(var(--p-size) - 2);
 
     transition: 300ms opacity, 500ms left;
 }
@@ -315,11 +315,6 @@ main {
     }
 
     /* Шрифты */
-    body {
-        font-size: var(--p-size);
-        line-height: var(--p-line-height);
-    }
-
     h2, #show_words_button, .main_rule_number {
         font-size: 75px;
         line-height: 85px;

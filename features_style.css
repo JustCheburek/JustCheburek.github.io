@@ -2,7 +2,7 @@
 main {
     display: flex;
     justify-content: center;
-    min-height: 500px;
+    height: clamp(300px, 550px, 65vh);
 }
 
 /* Максимальная величина страницы */
@@ -11,8 +11,6 @@ main {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    max-width: 1200px;
-    min-width: min-content;
 }
 
 /* Максимальная величина фичи */
@@ -156,11 +154,6 @@ a:hover #minimap_img {
 a:hover #plugins_img {
     transform: scale(0.8) rotate(-30deg);
     filter: drop-shadow(0 0 30px rgba(var(--unic-color), 0.28));
-}
-
-/* Подвал */
-footer {
-    height: 100px;
 }
 
 /* Адаптивность */

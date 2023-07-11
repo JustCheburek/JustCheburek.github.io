@@ -34,20 +34,29 @@ function get_random_item(array, all_chances = array.length) {
 
 function update() {
     /* Обновление предметов */
+    // Смена части выпавшего предмета
+    change_width_roll()
+    change_time_roll()
+
+    // Если есть сохранённый контейнер
+    let container_html = localStorage.getItem("container")
+    if (container_html !== null && container_html !== "") {
+        container.innerHTML = container_html
+        return
+    }
 
     // Смена типа и редкости предметов
     for (let item of container.children) {
         let type_item = get_random_item(case_now, all_chances_case) // Тип предмета
         item.innerHTML = `<p>${type_item.displayname}</p>` // Текст фичи
         item.style.alignItems = "center" // Расположение текста
-        item.dataset.drop = "" // Сброс дропа
         let rarity_item = "drop" // Одна редкость
         let drop = type_item.name // Дроп
 
-        if (type_item.rarity === "random") {
-            // Удаляем редкости
-            clear_rarities(item)
+        // Удаляем редкости
+        clear_rarities(item)
 
+        if (type_item.rarity === "random") {
             // Выдаём редкость
             // Из словаря берём только имя (без процентов)
             rarity_item = get_random_item(rarities, all_chances_rarities).name
@@ -56,9 +65,7 @@ function update() {
             item.classList.add(rarity_item)
         } else {  // Если редкость не рандомная
             // Если нет класса, то выдаём
-            if (!item.classList.contains(type_item.rarity)) {
-                item.classList.add(type_item.rarity)
-            }
+            item.classList.add(type_item.rarity)
         }
 
         // Дроп + картинка
@@ -73,35 +80,29 @@ function update() {
 
             // html переменные
             item.innerHTML = `<img src="media/shop/${type_item.name}/${drop.name}.webp" alt="${type_item.displayname}/${drop.displayname}">`
-
-            // Дата-данные
-            item.dataset.drop = drop.displayname
         }
+
+        item.dataset.drop = drop.displayname
+        item.dataset.type = type_item.displayname
 
         // Приз
         if (item.classList.contains("result_item")) {
-            result_drop = {
-                drop: drop,
-                rarity: rarity_item,
-                display: item.innerHTML,
-                type: type_item.name,
-                img: (type_item[rarity_item] !== null),
-                permision: `ultracosmetics.${type_item.name}.${drop.name}`
-            }
-
-            console.log(result_drop)
+            item.dataset.img = (type_item[rarity_item] !== null)
+            item.dataset.permision = `ultracosmetics.${type_item.name}.${drop.name}`
         }
     }
 
-    // Смена части выпавшего предмета
-    change_width_roll()
-    change_time_roll()
+    // Сохранение контейнера
+    localStorage.setItem("container", container.innerHTML)
 }
 
 function win() {
     // Выигрыш
     container.classList.add("win")
     body.classList.add("win")
+
+    // Очистка сохранённого контейнера
+    localStorage.clear("container")
 }
 
 function clear_win() {
@@ -114,12 +115,22 @@ function change_type(type) {
     let case_select = document.querySelector("#case_select")
 
     if (type === undefined) {
+        // Изменение кейса при прокрутке
+        if (container.classList.contains("roll") || container.classList.contains("win")) {
+            show_notification("Ты не можешь поменять тип, при этом круча рулетку!")
+            case_select.selectedIndex = last_select
+            return
+        }
+
         // Изменение кейса
         type = case_select.value
+
+        // Очистка контейнера
+        localStorage.clear("container")
     }
 
     // Изменение шансов
-    if (type === "common" || type === null) {
+    if (type === "common") {
         // Изменение выбора
         case_select.selectedIndex = 0
 
@@ -178,14 +189,13 @@ function change_type(type) {
         rarities[5].chance = 3 // legendary
     }
 
-    // Сумма шансов всех типов
+    // Суммы шансов
     all_chances_case = get_all_chances(case_now)
-
-    // Сумма шансов всех редкостей
     all_chances_rarities = get_all_chances(rarities)
 
     // Сохранение в локальную память
     localStorage.setItem("type", type)
+    last_select = case_select.selectedIndex
 
     update()
 }
@@ -228,7 +238,6 @@ function clear_rarities(item) {
     }
 }
 
-
 // Контейнер с предметами
 const container = document.querySelector("#natural_container")
 
@@ -239,16 +248,17 @@ const roll = document.querySelector("#roll")
 const root = document.querySelector(":root")
 
 // Переменные
-let roll_time  // Время кручения
-let timer_win  // Тайм аут
-let result_drop  // Инфо о призе
+let roll_time, // Время кручения
+    timer_win, // Тайм аут
+    last_select, // Прошлый выбор кейса (int)
 
-// Суммы шансов
-let all_chances_rarities
-let all_chances_case
+    // Суммы шансов
+    all_chances_rarities,
+    all_chances_case
 
 // Кручение + обновление
 change_type(localStorage.getItem("type"))
+
 
 // Загрузка окна
 window.addEventListener("load", function () {
@@ -272,7 +282,7 @@ window.addEventListener("load", function () {
             }
         } else {
             // Победа
-            timer_win = setTimeout(win, roll_time + 1000)
+            timer_win = setTimeout(win, roll_time + 500)
 
             // Меняет текст кнопки
             roll.textContent = "Сбросить"

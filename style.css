@@ -78,27 +78,24 @@
 Обнуление
 */
 a {
-    text-decoration: none;
     color: rgb(var(--white-color));
 }
 
 /*
 Весь сайт
 */
-html {
+body {
     scroll-behavior: smooth;
     scroll-padding: 108px; /* размер шапки */
-}
-
-body {
     font-family: 'Montserrat', sans-serif;
     background: rgb(var(--background-color));
     color: rgb(var(--white-color));
-    font-weight: 400;
+    overflow-x: hidden; /* Для оповещений */
 }
 
 #max_size {
-    width: 100%;
+    max-width: 1200px;
+    min-width: fit-content;
 }
 
 img {
@@ -204,6 +201,35 @@ button {
 /* Шрифты */
 h1 {
     line-height: 45px;
+}
+
+/* Уведомление */
+#notification {
+    /* Расположение */
+    position: fixed;
+    bottom: 0;
+    right: -300px;
+    z-index: 1000;
+    padding: 20px;
+
+    /* Размеры */
+    width: 250px;
+    height: 80px;
+
+    /* Отображение */
+    background: linear-gradient(-45deg, rgba(var(--black-color), 0.5), rgb(var(--background-color), 0.8));
+    backdrop-filter: blur(8px);
+
+    border-top: solid 1px rgba(var(--unic-color), 0.5);
+    border-left: solid 1px rgba(var(--unic-color), 0.5);
+    border-radius: 20px 0 0 0;
+
+    /* Анимация */
+    transition: right 500ms;
+}
+
+#notification.active {
+    right: 0;
 }
 
 /*

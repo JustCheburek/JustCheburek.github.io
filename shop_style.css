@@ -19,7 +19,6 @@
 }
 
 body {
-    height: 100vh;
     font-size: var(--p-size);
 }
 
@@ -32,7 +31,6 @@ body {
     margin: 0 auto;
 
     /* Размеры */
-    max-width: 1200px;
     height: 80%;
 
     /* Отображение */
@@ -63,6 +61,32 @@ body {
     border-radius: 25px;
 
     overflow: hidden;
+}
+
+/* Линия */
+#visual_container:before {
+    content: " ";
+
+    /* Расположение */
+    position: absolute;
+    left: 400px;
+    top: -15px;
+    z-index: 10;
+
+    /* Размеры */
+    width: 2px;
+    height: 380px;
+
+    /* Отображение */
+    background: rgba(var(--unic-color), 0.5);
+    opacity: 1;
+
+    /* Анимация */
+    transition: opacity 200ms;
+}
+
+body.win #visual_container:before {
+    opacity: 0;
 }
 
 /* Информация о редкостях */
@@ -100,32 +124,6 @@ body {
 
 #case_select * {
     font-weight: 500;
-}
-
-/* Линия */
-#visual_container:before {
-    content: " ";
-
-    /* Расположение */
-    position: absolute;
-    left: 400px;
-    top: -15px;
-    z-index: 10;
-
-    /* Размеры */
-    width: 2px;
-    height: 380px;
-
-    /* Отображение */
-    background: rgba(var(--unic-color), 0.5);
-    opacity: 1;
-
-    /* Анимация */
-    transition: opacity 500ms;
-}
-
-body.win ~ #visual_container:before {
-    opacity: 0;
 }
 
 /* Реальный контейнер */
@@ -172,12 +170,13 @@ body.win ~ #visual_container:before {
     position: absolute;
     content: attr(data-drop);
     opacity: 0;
-    transition: opacity 500ms;
+    transition: opacity 600ms;
     z-index: 1000;
 }
 
 .item:has(img):hover:before, #natural_container.win .result_item:has(img):before {
     opacity: 1;
+    transition: opacity 600ms;
     transition-delay: var(--hover-delay);
 }
 
@@ -186,12 +185,13 @@ body.win ~ #visual_container:before {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    transition: 500ms transform;
+    transition: transform 400ms;
 }
 
-.item > img:hover, #natural_container.win .result_item > img {
+.item:hover > img, #natural_container.win .result_item > img {
     /* Увеличение при наведении */
     transform: scale(1.5);
+    transition: transform 600ms;
     transition-delay: var(--hover-delay);
 }
 

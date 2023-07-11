@@ -55,7 +55,7 @@ let case_now = [
         rare: [
             {
                 name: "cry",
-                displayname: "плачущий"
+                displayname: "плач"
             }, {
                 name: "lovestruckallay",
                 displayname: "<3"
